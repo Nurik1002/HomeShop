@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth models import AbstractUser
+from django.contrib.auth.models import AbstractUser
 
 class MainUser(AbstractUser):
     phone_number = models.CharField(max_length=10, verbose_name='Telefon raqam')
@@ -9,4 +9,4 @@ class MainUser(AbstractUser):
 
     class Meta:
         verbose_name = 'User'
-        verbose_name_plural = '1. Userlar'
+        verbose_name_plural = 'Userlar'
