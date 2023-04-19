@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Bosh sahifa{% endblock title %}
+{% block title %}Uy Bozori{% endblock title %}
 
 {% block content %}
     <br/>
     <div class="jumbotron">
         <h1 class="display-4">Assalom alaykum!</h1>  
     </div>
-    
+    {% for home in object_list %}
+    <div>
+
+        <div >
+                 <h2>{{ home.title }} </h2>
+            <img src = {{ home.photo }}>
+        </div>
+
+    </div>
+{% endfor %}
 {% endblock content %}
