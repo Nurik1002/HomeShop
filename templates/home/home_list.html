@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Uylar{% endblock title %}
+
+{% block content %}
+{% for home in object_list %}
+    <div> 
+
+        <div >
+                <span> <h2>{{ home.title }} </h2>  < /span>
+        </div>
+        
+    </div>
+{% endfor %}
+{% endblock content %}
