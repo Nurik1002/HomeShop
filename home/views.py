@@ -8,3 +8,5 @@ from home.models import Home
 class HomeListView(ListView):
     model = Home
     template_name = 'home.html'
+    
+
