@@ -8,7 +8,7 @@ admin.site.unregister(Group)
 
 class MainUserAdmin(UserAdmin):
     ''' Asosoy userlari '''
-    list_display = ['username', 'last_name', 'first_name', 'email', 'is_active', 'is_staff', 'is_superuser']
+    list_display = ['username', 'last_name', 'first_name', 'email', 'phone_number', 'is_active', 'is_staff', 'is_superuser']
 admin.site.register(MainUser, MainUserAdmin)
 
 
