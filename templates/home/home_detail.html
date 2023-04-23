@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
     <div>
-        <div
+    	<h1>{{ data.title }}</h1>
+    	<img src="{{ data.photo.url }}" alt="photo">
+    
+    	<h5>{{ data.address }}</h5>
+    	<h5> {{ data.city }}</h5>
+   		    
     </div>
 
 {% endblock content %}

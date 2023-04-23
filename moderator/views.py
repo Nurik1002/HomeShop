@@ -43,4 +43,4 @@ def Login(request):
 @login_required(login_url='login')
 def Logout(request):
     logout(request)
-    return redirect("login")
+    return redirect("home")

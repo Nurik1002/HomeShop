@@ -5,17 +5,26 @@
 
 {% block content %}
     <br/>
-    <div class="jumbotron">
-        <h1 class="display-4">Assalom alaykum!</h1>  
+    <div>
+        <h1 class="display-4">Assalom alaykum! </h1>  
+        {% if user.is_authenticated %}
+        <a href="{% url 'create'  user.pk %}">E'lon berish</a>
+         {% endif %}
     </div>
-    {% for home in object_list %}
+
+    
     <div>
 
-        <div >
-                 <h2>{{ home.title }} </h2>
-            <img src = {{ home.photo }}>
+
+        {% for home in data %}
+        <div >           
+            <h2> <a href="{% url 'detail' home.pk %}" > {{ home.title }} </a> </h2>
+
+            <img src = {{ home.photo.url }}>           
+
         </div>
+        {% endfor %}
 
     </div>
-{% endfor %}
+
 {% endblock content %}
