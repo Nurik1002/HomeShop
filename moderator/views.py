@@ -21,24 +21,26 @@ def signup(request):
         new_user.phone_number = phone_num
 
         new_user.save()
-        return redirect("home")
+        return redirect("login")
 
     return render(request, 'user/register.html', {})
 
 def Login(request):
     if request.method == "POST":
         name = request.POST.get('uname')
-        password = request.POST.get('pass')
+        password = request.POST.get('password')
         user = authenticate(request, username=name, password=password)
 
         if user is not None:
             login(request, user)
             return redirect('home')
+        
         else:
             return HttpResponse("Foydalanuvchi topilmadi")
 
     return render(request, "user/login.html")
 
+@login_required(login_url='login')
 def Logout(request):
     logout(request)
     return redirect("login")
