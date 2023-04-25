@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
+from django.urls import reverse
 from moderator.models import MainUser
 from home.models import Home
 
@@ -14,6 +14,7 @@ def home_list(request):
     
 
 
+@login_required(login_url='login')
 def home_detail(request, pk):
 	context = {}
 	data = Home.objects.get(id = pk)
@@ -46,7 +47,8 @@ def home_create(request, id):
 		new_home.area = area
 
 		new_home.save()
-		return redirect(request, "detail/<int:new_home.id>", {})
+
+		return redirect(request, "home", {})
 
 
 

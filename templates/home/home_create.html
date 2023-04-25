@@ -5,6 +5,8 @@
 	<div>
 	  <form method="POST">
 	    {% csrf_token %}
+        {{ form.as_p }}
+        <!--
 	    <label for="title">Title:</label>
     	<input type="text", placeholder="Enter home title ", name="title"> <br>
 
@@ -23,8 +25,9 @@
     	<label for="num_of_rooms">Rooms:</label>
     	<input type="number", placeholder="Enter home number of rooms ", name="numofrooms"> <br>
 
-    	<label for="area">Title:</label>
+    	<label for="area">Area:</label>
     	<input type="number", placeholder="Enter home area ", name="area"> <br>
+    -->
 
           <button type="submit">E'lon berish</button> 
 	</form>
