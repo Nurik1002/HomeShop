@@ -19,11 +19,13 @@ def home_list(request):
     
 
 @login_required(login_url='login')
-def get_region(request, reg):
+def get_region(request):	
 	context = {}
-	data = Home.objects.filter(city = reg)
+	data = Home.objects.filter(city = 'Tashkent')
 	context['data'] = data
-	
+
+	return render(request, "home/home_reg.html", context)
+
 
 
 
