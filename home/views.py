@@ -9,6 +9,7 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
+
 def home_list(request):
 	context = {}
 	data = Home.objects.all()
@@ -18,6 +19,7 @@ def home_list(request):
     
 
 
+
 @login_required(login_url='login')
 def home_detail(request, pk):
 	context = {}
@@ -25,12 +27,20 @@ def home_detail(request, pk):
 	context["data"] = data
 	return render(request, 'home/home_detail.html', context)
 
+
+
+
 @login_required(login_url='login')
-def my_homes(request, id):
+def my_homes(request, id ):
+	user =  MainUser.objects.get(id = id)
 	context = {}
-	data = Home.objects.filter(user.id == id)
+	data = Home.objects.filter(user = user)
 	context['data'] = data
 	return render(request, 'home/my_homes.html', context)
+
+
+
+
 
 
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
