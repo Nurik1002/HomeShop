@@ -9,8 +9,12 @@
     
     	<h5>{{ data.address }}</h5>
     	<h5> {{ data.city }}</h5>
-    	<a href="{% url 'delete' data.pk %}">Delete</a>
+    	{% if data.user.id == user.id %}
+    	<a href="{% url 'delete' data.pk %}">Delete</a>|
+    	<a href="{% url 'update' data.pk %}">Update</a>
+    	{% endif %}
    		    
     </div>
+    	
 
 {% endblock content %}

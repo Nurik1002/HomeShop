@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Uy Bozori{% endblock title %}
+
+{% block content %}
+    <br/>
+    <div>
+        <h1 class="display-4">Assalom alaykum! </h1>  
+        
+    </div>
+
+    
+    <div>
+
+        {% for home in data %}
+        <div >           
+            <h2> <a href="{% url 'detail' home.pk %}" > {{ home.title }} </a> </h2>
+
+            <img src = {{ home.photo.url }}>           
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock content %}

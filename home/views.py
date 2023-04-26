@@ -25,6 +25,13 @@ def home_detail(request, pk):
 	context["data"] = data
 	return render(request, 'home/home_detail.html', context)
 
+@login_required(login_url='login')
+def my_homes(request, id):
+	context = {}
+	data = Home.objects.filter(user.id == id)
+	context['data'] = data
+	return render(request, 'home/my_homes.html', context)
+
 
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 	model = Home
@@ -47,6 +54,15 @@ class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.user == self.request.user
+
+class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Home
+    fields = ('title','price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
+    template_name = 'home/home_update.html'
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user == self.request.user
 
 
 
