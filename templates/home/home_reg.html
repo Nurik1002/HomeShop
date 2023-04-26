@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<div>
+    {% for home in data %}
+    <div >           
+        <h2> <a href="{% url 'detail' home.pk %}" > {{ home.title }} </a> </h2>
+
+        <img src = {{ home.photo.url }}>           
+
+    </div>
+    {% endfor %}
+
+ </div>
