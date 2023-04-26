@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+from django.urls import reverse_lazy
 from moderator.models import MainUser
 from home.models import Home
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
+
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 def home_list(request):
@@ -22,37 +26,31 @@ def home_detail(request, pk):
 	return render(request, 'home/home_detail.html', context)
 
 
+class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+	model = Home
+	template_name = 'home/home_create.html'
+	success_url = reverse_lazy('home')
+	fields = ('title', 'price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
 
-@login_required(login_url='login')
-def home_create(request, id):
-	if request.method == "POST":
-		title = request.POST.get("title")
-		price = request.POST.get('price')
-		photo = request.POST.get('photo')
-		address = request.POST.get('address')
-		city = request.POST.get('city')
-		num_of_rooms = request.POST.get('numofrooms')
-		area = request.POST.get('area')
+	def form_valid(self, form):
+		form.instance.user = self.request.user
+		return super().form_valid(form)
 
-		user = MainUser.objects.get(id = id)
+	def test_func(self):
+		return self.request.user.is_superuser
 
-		new_home = Home()
-		new_home.title = title
-		new_home.price = price
-		new_home.user = user
-		new_home.photo = photo
-		new_home.address = address
-		new_home.city = city
-		new_home.num_of_rooms = num_of_rooms
-		new_home.area = area
+class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+	model = Home
+	template_name = 'home/home_delete.html'
+	success_url = reverse_lazy('home')
 
-		new_home.save()
-
-		return redirect(request, "home", {})
+	def test_func(self):
+		obj = self.get_object()
+		return obj.user == self.request.user
 
 
 
 
-	return render(request, "home/home_create.html", {}) 
+
 
 
