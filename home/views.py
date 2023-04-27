@@ -19,11 +19,10 @@ def home_list(request):
     
 
 @login_required(login_url='login')
-def get_region(request):	
+def get_region(request, region):	
 	context = {}
-	data = Home.objects.filter(city = 'Tashkent')
+	data = Home.objects.filter(city = region)
 	context['data'] = data
-
 	return render(request, "home/home_reg.html", context)
 
 
@@ -55,33 +54,39 @@ def my_homes(request, id ):
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 	model = Home
 	template_name = 'home/home_create.html'
-	success_url = reverse_lazy('home')
+	
 	fields = ('title', 'price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
-
+	
+	success_url = reverse_lazy('home')
 	def form_valid(self, form):
 		form.instance.user = self.request.user
 		return super().form_valid(form)
 
 	def test_func(self):
-		return self.request.user.is_superuser
+		return True
+
+	
 
 class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Home
 	template_name = 'home/home_delete.html'
 	success_url = reverse_lazy('home')
-
 	def test_func(self):
 		obj = self.get_object()
 		return obj.user == self.request.user
+
 
 class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Home
     fields = ('title','price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
     template_name = 'home/home_update.html'
+    success_url = reverse_lazy('home')
 
     def test_func(self):
         obj = self.get_object()
         return obj.user == self.request.user
+
+
 
 
 

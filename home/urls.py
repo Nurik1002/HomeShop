@@ -3,7 +3,7 @@ from home import views
 
 
 urlpatterns = [
-	path('region/', views.get_region, name = 'home_reg' ),
+	path('region/<str:region>', views.get_region, name = 'region' ),
 	path('my/<int:id>/', views.my_homes, name = 'my_homes'),
 	path('<int:pk>/update', views.HomeUpdateView.as_view(), name = 'update'),
 	path('<int:pk>/delete', views.HomeDeleteView.as_view(), name = 'delete'),
