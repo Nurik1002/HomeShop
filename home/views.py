@@ -51,20 +51,6 @@ def my_homes(request, id ):
 	return render(request, 'home/my_homes.html', context)
 
 
-def home_create(request):
-    form = HomeForm()
-    if request.method == 'POST':
-        form = HomeForm(data=request.POST)
-        if form.is_valid:
-            object = form.save(commit=False)
-            object.user = request.user
-            object.save()
-            return redirect('home')
-
-    return render(request, 'home/home_create.html', {
-        'form': form,
-    })
-
 
 
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
