@@ -1,14 +1,18 @@
+from typing import Optional
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from moderator.models import MainUser
 from home.models import Home
+from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-
-
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django import forms
 
-
+class HomeForm(forms.ModelForm):
+    class Meta:
+        model = Home 
+        fields = ['title', 'price', 'photo', 'address', 'city', 'num_of_rooms', 'area']
 
 def home_list(request):
 	context = {}
@@ -47,23 +51,37 @@ def my_homes(request, id ):
 	return render(request, 'home/my_homes.html', context)
 
 
+def home_create(request):
+    form = HomeForm()
+    if request.method == 'POST':
+        form = HomeForm(data=request.POST)
+        if form.is_valid:
+            object = form.save(commit=False)
+            object.user = request.user
+            object.save()
+            return redirect('home')
 
+    return render(request, 'home/home_create.html', {
+        'form': form,
+    })
 
 
 
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 	model = Home
-	template_name = 'home/home_create.html'
-	
-	fields = ('title', 'price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
-	
-	success_url = reverse_lazy('home')
-	def form_valid(self, form):
-		form.instance.user = self.request.user
-		return super().form_valid(form)
+	template_name = "home/home_create.html"
+	fields = ('title','price','photo','city', 'address', 'num_of_rooms', 'area')
+	success_url = reverse_lazy("home")
 
 	def test_func(self):
-		return True
+		return self.request.user.is_active
+
+	def form_valid(self, form):
+		form.instance.user = self.request.user 
+		form.save()
+		messages.success(self.request, "The task was created successfully.")
+		return super().form_valid(form)
+
 
 	
 
