@@ -1,0 +1,58 @@
+.about__backCon {
+  background: url("../Images/s12.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh !important;
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.6;
+  }
+  .about__header {
+    min-height: 60px !important;
+    position: relative !important;
+  }
+  .about__section {
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-top: 30px;
+    .carousel-item {
+      border-radius: 20px;
+      img {
+        height: calc(100vh - 200px) !important;
+        border-radius: 20px;
+      }
+    }
+    .about__sGroup {
+      row-gap: 1rem;
+      .sGroup__title {
+        @include font(Poppins, 700, 25px, 35px, #fff);
+        text-align: center;
+        letter-spacing: 1px;
+        word-spacing: 5px;
+      }
+      .sGroup__info {
+        padding: 8px 12px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #00ff00;
+        border: none;
+        @include font(Poppins, 500, 16px, 18px, #0011fffd);
+      }
+    }
+  }
+  .about__footer {
+    .footer__subtitle {
+      color: #fff !important;
+    }
+  }
+}

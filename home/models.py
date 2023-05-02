@@ -16,7 +16,6 @@ class Home(models.Model):
     ('Sirdaryo', 'Sirdaryo'),
     ('Surxondaryo', 'Surxondaryo'),
     ('Tashkent', 'Tashkent'),
-    ('Toshkent City', 'Toshkent City'),
     ('Xorazm', 'Xorazm'),]
 
 
@@ -28,6 +27,7 @@ class Home(models.Model):
     city = models.CharField(max_length=100, verbose_name='Shahar',choices = UZBEKISTAN_REGION_CHOICES, default = 'Tashkent')
     num_of_rooms = models.PositiveSmallIntegerField(verbose_name='Xonalar soni')
     area = models.SmallIntegerField(verbose_name='Uy maydoni', null=False, blank=True)
+    description = models.TextField(verbose_name='Description', null=True)
     
     def __str__(self) -> str:
         return f"{self.title}"

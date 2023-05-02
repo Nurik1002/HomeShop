@@ -1,10 +1,30 @@
 {% extends "base.html" %}
+{% block title %}Login{% endblock title %}
 
 {% block content %}
 
  <div>
+    <div class="SingI__modal d-flex align-items-center justify-content-center">
+        <form method="POST"  class="d-flex flex-column justify-content-center align-items-center" >
+
+            {% csrf_token %}
+
+            <div class="Input__group d-flex flex-column justify-content-center align-items-center">
+                <input type="text" placeholder="Username" required, name="uname">
+                <input type="password" placeholder="Password" required, name="password">
+            </div>
+
+            <div class="button__group d-flex justify-content-end align-items-center">
+                <a href="{% url 'home' %}" class="IN__cancel">Cancel</a>
+                <input type="submit" value="Send">
+            </div>
+
+        </form>
+    </div>    
+
+    <!--
      <form method="POST">
-        {% csrf_token %}
+        
 
         <label for="uname">Username:</label>
         <input type="text", placeholder="Enter your username", name="uname"> <br>
@@ -16,5 +36,6 @@
 
         <p>Akkauntingiz yo'qmi? <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a></p>
  </div>
+-->
 
 {% endblock content %}

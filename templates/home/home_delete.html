@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
     <h1>Postni o'chirish</h1>
         <form action="" method="post">{% csrf_token %}
         <p>"{{ home.title }}" E'lonni o'chirmoqchimisiz?</p>
-        <button class="btn btn-danger ml-2" type="submit">Ha</button>
+        <div class="button__group d-flex justify-content-end align-items-center">
+            <a href="{% url 'home' %}" class="UP__cancel">Cancel</a>
+            <input type="submit" value="Send">
+        </div>
     </form>
 {% endblock content %}

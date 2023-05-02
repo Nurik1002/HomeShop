@@ -1,31 +1,29 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SignUp{% endblock title %}
 
 {% block content %}
-<h2>Ro'yxatdan o'tish</h2>
-<div>
-  <form method="POST">
+
+<div class="SignU__modal d-flex align-items-center justify-content-center">
+  <form  class="d-flex flex-column justify-content-center align-items-center" method="POST">
     {% csrf_token %}
 
-    <label for="fname">First Name:</label>
-    <input type="text", placeholder="Enter your first name", name="fname"> <br>
+      <div class="Input__group d-flex flex-column justify-content-center align-items-center">
+          <input type="text" placeholder="Username" required, name="uname">
+          <input type="tel" placeholder="(+998) ** *** ** **" required, name="pnum">
+          <input type="text" placeholder="Firstname" required, name="fname">
+          <input type="text" placeholder="Lastname" required, name="lname">
+          <input type="email" placeholder="Email" required, name="email">
+          <input type="password" placeholder="Password" required, name="password">
+      </div>
 
-    <label for="lname">Lirst Name:</label>
-    <input type="text", placeholder="Enter your last name", name="lname"> <br>
+      <div class="button__group d-flex justify-content-end align-items-center">
+          <a href="{% url 'home' %}" class="UP__cancel">Cancel</a>
+          <input type="submit" value="Send">
+      </div>
 
-    <label for="uname">Username:</label>
-    <input type="text", placeholder="Enter your username", name="uname"> <br>
+</div>    
 
-    <label for="email">Email:</label>
-    <input type="text", placeholder="Enter your email", name="email"> <br>
 
-    <label for="pnum">Phone number:</label>
-    <input type="text", placeholder="Enter your phone number", name="pnum"> <br>
-
-    <label for="password">First Name:</label>
-    <input type="password", placeholder="Create new password", name="password"> <br>
-
-    <button type="submit">Ro'yxatdan o'tish</button>
-
-  </form>
-</div>
 {% endblock content %}

@@ -7,12 +7,8 @@ from home.models import Home
 from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django import forms
 
-class HomeForm(forms.ModelForm):
-    class Meta:
-        model = Home 
-        fields = ['title', 'price', 'photo', 'address', 'city', 'num_of_rooms', 'area']
+
 
 def home_list(request):
 	context = {}
@@ -56,7 +52,7 @@ def my_homes(request, id ):
 class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 	model = Home
 	template_name = "home/home_create.html"
-	fields = ('title','price','photo','city', 'address', 'num_of_rooms', 'area')
+	fields = ('title','price','photo','city', 'address', 'num_of_rooms', 'area', 'description')
 	success_url = reverse_lazy("home")
 
 	def test_func(self):
@@ -82,7 +78,7 @@ class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Home
-    fields = ('title','price', 'photo', 'city', 'address', 'num_of_rooms', 'area')
+    fields = ('title','price', 'photo', 'city', 'address', 'num_of_rooms', 'area', 'description')
     template_name = 'home/home_update.html'
     success_url = reverse_lazy('home')
 

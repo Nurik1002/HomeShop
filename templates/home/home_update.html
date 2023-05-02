@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h2>Yangilash</h2>
@@ -9,7 +10,10 @@
         {{ form.as_p }}
 
 
-          <button type="submit">Yangilash</button> 
+		<div class="button__group d-flex justify-content-end align-items-center">
+			<a href="{% url 'home' %}" class="UP__cancel">Cancel</a>
+			<input type="submit" value="Send">
+		</div>
 	</form>
 </div>
 {% endblock content %}

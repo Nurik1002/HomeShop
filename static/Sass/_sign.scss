@@ -1,0 +1,141 @@
+.SignU__modal,
+.SingI__modal {
+  width: 100%;
+  height: 100vh;
+  background: url("../Images/3.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  form {
+    width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    row-gap: 1rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-color: rgba($color: #5e5e5e, $alpha: 1);
+      opacity: 0.6;
+      z-index: 2;
+    }
+    .Input__group {
+      width: 100%;
+      z-index: 3;
+      row-gap: 1rem;
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 10px 12px;
+        border-radius: 10px;
+      }
+    }
+    .button__group {
+      width: 100%;
+      z-index: 3;
+      column-gap: 1rem;
+      input {
+        padding: 5px 10px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #00ff00;
+        border: none;
+        color: #0011fffd;
+      }
+      a {
+        color: #f3b947;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .SignU__modal,
+  .SingI__modal {
+    form {
+      width: 450px;
+      padding: 20px;
+      border-radius: 16px;
+      row-gap: 15px;
+      &::after {
+        border-radius: 16px;
+      }
+      .Input__group {
+        row-gap: 15px;
+        input {
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .SignU__modal,
+  .SingI__modal {
+    form {
+      margin: 0 10px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 16px;
+      row-gap: 15px;
+      &::after {
+        border-radius: 16px;
+      }
+      .Input__group {
+        row-gap: 15px;
+        input {
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .SignU__modal,
+  .SingI__modal {
+    form {
+      padding: 15px;
+      border-radius: 10px;
+      &::after {
+        border-radius: 10px;
+      }
+      .Input__group {
+        row-gap: 13px;
+        input {
+          padding: 6px 9px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-height: 450px) {
+  .SignU__modal,
+  .SingI__modal {
+    form {
+      padding: 15px;
+      border-radius: 10px;
+      &::after {
+        border-radius: 10px;
+      }
+      .Input__group {
+        row-gap: 13px;
+        input {
+          padding: 6px 9px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-height: 380px) {
+  .SignU__modal,
+  .SingI__modal {
+    height: calc(100vh + 100px);
+  }
+}
