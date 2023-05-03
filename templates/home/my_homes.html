@@ -6,32 +6,37 @@
 {% block content %}
 {% for home in data %}
 <div class="card">
-    
     <div class="card__img">
-        <img src="{{ home.photo.url }}" class="card-img-top" alt="..."></div>
+        <img src="{{ home.photo.url }}" class="card-img-top" alt="...">
+        <div class="cI__about d-flex">
+            <div class="mess__ion new"></div>
+            <span class="ion__subtitle new">Yangi</span>
+        </div>
+    </div>
     <div class="card-body">
         <div class="card__group d-flex justify-content-between align-items-center">
             <h5 class="card-title">Uy</h5>
             <div class="card__shop d-flex align-items-center">
                 <div class="shooping__grop">
-
                     <img src="{% static 'Images/shopping.62d60ad.svg' %}" class="shopping__img" alt="">
                 </div>
                 <img src="{% static 'Images/Vector.png' %}" alt="">
             </div>
         </div>
-        
-        <a href="{% url 'detail' home.pk %}" >
+        <a href="{% url 'detail' home.pk %}">
         <p class="card-text">
-            {{ home.title }}
+            {{ home.city }}
         </p>
+        </a>  
         <div class="card__footer">
-            <a href="#/" class="cF__item__link"> {{ home.num_of_rooms }}</a>
-            <a href="#/" class="cF__item__link"> {{ home.area }}</a>
-            <a href="#/" class="cF__item__link"> {{ home.price }}</a>
-        </div>
+            <a href="{% url 'detail' home.pk %}" class="cF__item__link">{{ home.num_of_rooms }} xona</a>
+            <a href="{% url 'detail' home.pk %}" class="cF__item__link">{{ home.area }} kv</a>
+            <a href="{% url 'detail' home.pk %}" class="cF__item__link">${{ home.price }}</a>
+        </div>    
+                         
     </div>
-</a>
+
 </div>
-{% endfor %}
+{% endfor %}  
+   
 {% endblock content %}

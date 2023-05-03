@@ -1,7 +1,7 @@
 .about__backCon {
   background: url("../Images/s12.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
   width: 100%;
@@ -53,6 +53,36 @@
   .about__footer {
     .footer__subtitle {
       color: #fff !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .about__backCon {
+    height: auto !important;
+    min-height: 100vh !important;
+    .about__section {
+      grid-template: auto / repeat(1, 1fr);
+    }
+  }
+}
+@media only screen and (max-width: 420px) {
+  .about__backCon {
+    .about__section {
+      height: calc(100vh - 180px) !important;
+      justify-content: center;
+      align-items: center;
+      .carousel-item {
+        img {
+          height: 100% !important;
+          border-radius: 14px;
+        }
+      }
+      .about__sGroup {
+        .sGroup__title {
+          @include font(Poppins, 500, 20px, 30px, #fff);
+        }
+      }
     }
   }
 }

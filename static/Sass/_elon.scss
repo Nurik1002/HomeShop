@@ -1,0 +1,134 @@
+.Elon__backCon {
+  background: url("../Images/s12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh !important;
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.6;
+  }
+  .about__header {
+    min-height: 60px !important;
+    position: relative !important;
+  }
+  .E__FGroup {
+    margin-top: 40px;
+    .FG__title {
+      @include font(Montserrat, 700, 40px, 48px, rgb(255, 255, 255));
+      margin-bottom: 35px;
+    }
+    form {
+      row-gap: 2rem;
+      .formChildGR {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        grid-gap: 30px;
+        label {
+          @include font(Montserrat, 500, 16px, 19px, rgb(255, 255, 255));
+        }
+        option {
+          @include font(Montserrat, 500, 14px, 19px, #383838);
+        }
+        input {
+          padding: 8px 12px;
+          &::placeholder {
+            @include font(Montserrat, 500, 14px, 19px, #383838);
+          }
+          &:hover {
+            border-color: $inputBgColor;
+            outline: none;
+          }
+        }
+        select {
+          padding: 8px 12px;
+          &:hover {
+            border-color: $inputBgColor;
+            outline: none;
+          }
+        }
+        textarea {
+          height: 80px;
+          &:hover {
+            border-color: $inputBgColor;
+            outline: none;
+          }
+        }
+      }
+      .s__i__buttun {
+        padding: 8px 12px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #00ff00;
+        border: none;
+        @include font(Poppins, 500, 16px, 18px, #0011fffd);
+      }
+    }
+  }
+  .about__footer {
+    .footer__subtitle {
+      color: #fff !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Elon__backCon {
+    .E__FGroup {
+      margin-top: 30px;
+      .FG__title {
+        @include font(Montserrat, 700, 35px, 42px, rgb(255, 255, 255));
+        margin-bottom: 25px;
+      }
+      form {
+        .formChildGR {
+          grid-template: auto / repeat(2, 1fr);
+          grid-gap: 25px;
+          label {
+            @include font(Montserrat, 500, 15px, 19px, rgb(255, 255, 255));
+          }
+          input {
+            padding: 6px 12px;
+          }
+          select {
+            padding: 6px 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .Elon__backCon {
+    .E__FGroup {
+      margin-top: 25px;
+      .FG__title {
+        @include font(Montserrat, 700, 30px, 36px, rgb(255, 255, 255));
+        margin-bottom: 20px;
+      }
+      form {
+        .formChildGR {
+          grid-template: auto / repeat(1, 1fr);
+          label {
+            @include font(Montserrat, 500, 14px, 19px, rgb(255, 255, 255));
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-height: 930px) and (min-width:200px) {
+  .height__res {
+    justify-content: space-between !important;
+    height: 100vh !important;
+  }
+}

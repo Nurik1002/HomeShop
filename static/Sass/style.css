@@ -181,7 +181,7 @@ img {
 .about__backCon {
   background: url("../Images/s12.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
   width: 100%;
@@ -245,6 +245,381 @@ img {
   color: #fff !important;
 }
 
+@media only screen and (max-width: 800px) {
+  .about__backCon {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+  .about__backCon .about__section {
+    grid-template: auto/repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 420px) {
+  .about__backCon .about__section {
+    height: calc(100vh - 180px) !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .about__backCon .about__section .carousel-item img {
+    height: 100% !important;
+    border-radius: 14px;
+  }
+  .about__backCon .about__section .about__sGroup .sGroup__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+  }
+}
+.Elon__backCon {
+  background: url("../Images/s12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100vh !important;
+  position: relative;
+}
+.Elon__backCon::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.6;
+}
+.Elon__backCon .about__header {
+  min-height: 60px !important;
+  position: relative !important;
+}
+.Elon__backCon .E__FGroup {
+  margin-top: 40px;
+}
+.Elon__backCon .E__FGroup .FG__title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 35px;
+}
+.Elon__backCon .E__FGroup form {
+  row-gap: 2rem;
+}
+.Elon__backCon .E__FGroup form .formChildGR {
+  display: grid;
+  grid-template: auto/repeat(2, 1fr);
+  grid-gap: 30px;
+}
+.Elon__backCon .E__FGroup form .formChildGR label {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(255, 255, 255);
+}
+.Elon__backCon .E__FGroup form .formChildGR option {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #383838;
+}
+.Elon__backCon .E__FGroup form .formChildGR input {
+  padding: 8px 12px;
+}
+.Elon__backCon .E__FGroup form .formChildGR input::-moz-placeholder {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #383838;
+}
+.Elon__backCon .E__FGroup form .formChildGR input::placeholder {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #383838;
+}
+.Elon__backCon .E__FGroup form .formChildGR input:hover {
+  border-color: #08f94b;
+  outline: none;
+}
+.Elon__backCon .E__FGroup form .formChildGR select {
+  padding: 8px 12px;
+}
+.Elon__backCon .E__FGroup form .formChildGR select:hover {
+  border-color: #08f94b;
+  outline: none;
+}
+.Elon__backCon .E__FGroup form .formChildGR textarea {
+  height: 80px;
+}
+.Elon__backCon .E__FGroup form .formChildGR textarea:hover {
+  border-color: #08f94b;
+  outline: none;
+}
+.Elon__backCon .E__FGroup form .s__i__buttun {
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #00ff00;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(0, 17, 255, 0.9921568627);
+}
+.Elon__backCon .about__footer .footer__subtitle {
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .Elon__backCon .E__FGroup {
+    margin-top: 30px;
+  }
+  .Elon__backCon .E__FGroup .FG__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 25px;
+  }
+  .Elon__backCon .E__FGroup form .formChildGR {
+    grid-template: auto/repeat(2, 1fr);
+    grid-gap: 25px;
+  }
+  .Elon__backCon .E__FGroup form .formChildGR label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: rgb(255, 255, 255);
+  }
+  .Elon__backCon .E__FGroup form .formChildGR input {
+    padding: 6px 12px;
+  }
+  .Elon__backCon .E__FGroup form .formChildGR select {
+    padding: 6px 12px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .Elon__backCon .E__FGroup {
+    margin-top: 25px;
+  }
+  .Elon__backCon .E__FGroup .FG__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+  }
+  .Elon__backCon .E__FGroup form .formChildGR {
+    grid-template: auto/repeat(1, 1fr);
+  }
+  .Elon__backCon .E__FGroup form .formChildGR label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgb(255, 255, 255);
+  }
+}
+@media only screen and (min-height: 930px) and (min-width: 200px) {
+  .height__res {
+    justify-content: space-between !important;
+    height: 100vh !important;
+  }
+}
+.Product {
+  margin-top: 30px;
+}
+.Product .P__top {
+  grid-template: auto/repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  justify-content: center;
+}
+.Product .P__top .p__img__block .p_img {
+  width: 100%;
+  height: 100% !important;
+  border-radius: 10px;
+}
+.Product .P__top .Product__info {
+  row-gap: 1rem;
+}
+.Product .P__top .Product__info .list-group {
+  grid-template: auto/repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.Product .P__top .Product__info .list-group .list-group-item {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+.Product .P__top .Product__info .list-group .list-group-item .p__list {
+  margin: 0;
+}
+.Product .P__top .Product__info .list-group .list-group-item .p__list .p__list__title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  color: #f3b947;
+}
+.Product .P__top .Product__info .list-group .list-group-item .p__list .p__list__subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgb(255, 255, 255);
+}
+.Product .P__top .Product__info .settings__link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #00ff00;
+  border: 2px solid #00ff00;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(0, 17, 255, 0.9921568627);
+}
+.Product .P__top .Product__info .settings__link:hover {
+  border: 2px solid rgba(0, 17, 255, 0.9921568627);
+  background-color: transparent;
+}
+.Product .p__bottom {
+  margin-top: 30px;
+  row-gap: 1rem;
+}
+.Product .p__bottom .izox {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+.Product .p__bottom .izox__list {
+  grid-template: auto/repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.Product .p__bottom .izox__list .User__info__group {
+  row-gap: 1rem;
+  height: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+}
+.Product .p__bottom .izox__list .User__info__group::-webkit-scrollbar {
+  width: 4px;
+}
+.Product .p__bottom .izox__list .User__info__group::-webkit-scrollbar-thumb {
+  width: 2px;
+  border-radius: 30px;
+}
+.Product .p__bottom .izox__list .User__info__group:hover::-webkit-scrollbar-thumb {
+  background-color: #08f94b;
+}
+.Product .p__bottom .izox__list .User__info__group .izox__user__info {
+  border: 1px solid #fff;
+  row-gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+}
+.Product .p__bottom .izox__list .User__info__group .izox__user__info .izox__userName {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+.Product .p__bottom .izox__list .User__info__group .izox__user__info .izox__subtitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: rgb(255, 255, 255);
+}
+.Product .p__bottom .izox__list .User__info__group .izox__user__info .izox__dataTime {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgb(255, 255, 255);
+}
+.Product .p__bottom .izox__list .izox__ipsum {
+  row-gap: 10px;
+}
+.Product .p__bottom .izox__list .izox__ipsum textarea {
+  height: 180px;
+}
+.Product .p__bottom .izox__list .izox__ipsum .s__i__buttun {
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #00ff00;
+  border: 2px solid #00ff00;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(0, 17, 255, 0.9921568627);
+}
+.Product .p__bottom .izox__list .izox__ipsum .s__i__buttun:hover {
+  border: 2px solid rgba(0, 17, 255, 0.9921568627);
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 992px) {
+  .Product .P__top {
+    grid-template: auto/repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Product .p__bottom .izox__list {
+    grid-template: auto/repeat(1, 1fr);
+    grid-gap: 1.5rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .Product {
+    margin-top: 30px;
+  }
+  .Product .P__top .Product__info .list-group {
+    grid-template: auto/repeat(1, 1fr);
+  }
+}
 .carousel-item img {
   max-width: 100%;
   height: 100vh !important;
@@ -313,40 +688,33 @@ img {
 }
 .header .nav .menyu .list__group .list-group-item,
 .about__header .nav .menyu .list__group .list-group-item {
-  cursor: pointer;
-  width: 100%;
-  height: 40px;
+  background-color: transparent;
+  border: 0px;
+  padding: 0;
+}
+.header .nav .menyu .list__group .list-group-item a,
+.about__header .nav .menyu .list__group .list-group-item a {
+  height: 40px !important;
+  transition: all 0.2s linear;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
-  line-height: 21px;
+  line-height: 22px;
   color: #f3b947;
-  background-color: #d9d9d9;
   border-radius: 25px;
-  border: 0px;
-  outline: none;
-  transition: all 0.2s linear;
-  border: 1px solid #f3b947;
+  background-color: #d9d9d9;
+  padding: 7px 16px;
   position: relative;
-}
-.header .nav .menyu .list__group .list-group-item.active, .header .nav .menyu .list__group .list-group-item:hover,
-.about__header .nav .menyu .list__group .list-group-item.active,
-.about__header .nav .menyu .list__group .list-group-item:hover {
-  border: 1px solid #0d6efd;
-  color: #0d6efd;
-  background-color: transparent !important;
+  width: 100% !important;
+  border: 1px solid #f3b947;
 }
 .header .nav .menyu .list__group .list-group-item.active a, .header .nav .menyu .list__group .list-group-item:hover a,
 .about__header .nav .menyu .list__group .list-group-item.active a,
 .about__header .nav .menyu .list__group .list-group-item:hover a {
+  border: 1px solid #0d6efd;
   color: #0d6efd;
   background-color: transparent !important;
-}
-.header .nav .menyu .list__group .list-group-item a,
-.about__header .nav .menyu .list__group .list-group-item a {
-  transition: all 0.2s linear;
-  color: #f3b947;
 }
 .header .slider__after,
 .about__header .slider__after {
@@ -733,16 +1101,15 @@ footer .col-md-4 .icon__img {
     -moz-column-gap: 8px;
          column-gap: 8px;
   }
-  .header .nav .menyu .list__group .list-group-item,
-  .about__header .nav .menyu .list__group .list-group-item {
-    cursor: pointer;
+  .header .nav .menyu .list__group .list-group-item a,
+  .about__header .nav .menyu .list__group .list-group-item a {
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 24px;
     color: #f3b947;
-    padding: 6px 12px;
+    padding: 7px 12px;
   }
   .header .slider__after .slider__group__item .title,
   .about__header .slider__after .slider__group__item .title {
@@ -952,37 +1319,29 @@ footer .col-md-4 .icon__img {
   }
   .header .nav .menyu .list__group .list-group-item,
   .about__header .nav .menyu .list__group .list-group-item {
+    display: flex;
+    align-items: center;
+  }
+  .header .nav .menyu .list__group .list-group-item a,
+  .about__header .nav .menyu .list__group .list-group-item a {
     background-color: transparent;
-    width: 100%;
-    padding: 12px 20px;
+    width: 300px !important;
     height: auto;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
-    line-height: 21px;
+    line-height: 27px;
     color: #fff;
     border-radius: 10px;
     border: none;
   }
-  .header .nav .menyu .list__group .list-group-item.active, .header .nav .menyu .list__group .list-group-item:hover,
-  .about__header .nav .menyu .list__group .list-group-item.active,
-  .about__header .nav .menyu .list__group .list-group-item:hover {
-    border: none;
-    color: #f3b947;
-    background-color: #0d6efd !important;
-  }
   .header .nav .menyu .list__group .list-group-item.active a, .header .nav .menyu .list__group .list-group-item:hover a,
   .about__header .nav .menyu .list__group .list-group-item.active a,
   .about__header .nav .menyu .list__group .list-group-item:hover a {
+    border: none;
     color: #f3b947;
-    background-color: transparent !important;
-  }
-  .header .nav .menyu .list__group .list-group-item a,
-  .about__header .nav .menyu .list__group .list-group-item a {
-    width: 100%;
-    transition: all 0.2s linear;
-    color: #fff;
+    background-color: #0d6efd !important;
   }
   .header .nav .menyu.active__menyuu,
   .about__header .nav .menyu.active__menyuu {
@@ -1113,6 +1472,10 @@ footer .col-md-4 .icon__img {
   .header .nav .menyu,
   .about__header .nav .menyu {
     width: 100%;
+  }
+  .header .nav .menyu .list__group .list-group-item a,
+  .about__header .nav .menyu .list__group .list-group-item a {
+    width: 100% !important;
   }
   .header .nav .menyu__res__bars.active__bars__exit .M__bars__con,
   .about__header .nav .menyu__res__bars.active__bars__exit .M__bars__con {

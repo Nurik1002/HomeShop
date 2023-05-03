@@ -8,13 +8,53 @@ document.addEventListener("DOMContentLoaded", function () {
     menyu.classList.toggle("active__menyuu");
     menyu__modal.classList.toggle("modal__active");
     menyu__res__bars.classList.toggle("active__bars__exit");
-    // window.onscroll = function () { window.scrollTo(0, 0); };
+    // if(menyu.classList.contains("active__menyuu")) {
+    //   // window.onscroll = () => window.scroll(0, 0);
+    // }
   });
   menyu__modal.addEventListener("click", function() {
     menyu.classList.toggle("active__menyuu");
     menyu__modal.classList.toggle("modal__active");
     menyu__res__bars.classList.toggle("active__bars__exit");
   });
+
+  // card
+  const All__card = document.querySelector(".All__card"),
+  Home__card = document.querySelector(".Home__card"),
+  Twoo__card = document.querySelector(".Twoo__card"),
+  There__catd = document.querySelector(".There__catd"),
+  Uy = document.querySelectorAll(".Uy"),
+  Bog = document.querySelectorAll(".Bog"),
+  Hovli = document.querySelectorAll(".Hovli");
+  All__card.addEventListener("click", function() {
+      for(let i = 0; i < Uy.length; i++) {
+        Uy[i].style.display="flex";
+        Bog[i].style.display="flex";
+        Hovli[i].style.display="flex";
+      }
+  });
+  Home__card.addEventListener("click", function() {
+      for(let l = 0; l < Uy.length; l++) {
+        Uy[l].style.display="flex";
+        Bog[l].style.display="none";
+        Hovli[l].style.display="none";
+      }
+  });
+  Twoo__card.addEventListener("click", function() {
+      for(let o = 0; o < Bog.length; o++) {
+        Bog[o].style.display="flex";
+        Uy[o].style.display="none";
+        Hovli[o].style.display="none";
+      }
+  });
+  There__catd.addEventListener("click", function() {
+      for(let r = 0; r < Hovli.length; r++) {
+        Hovli[r].style.display="flex";
+        Uy[r].style.display="none";
+        Bog[r].style.display="none";
+      }
+  });
+  
 
   // country__item 
   var states__group = document.querySelector(".states__group");

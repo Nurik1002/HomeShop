@@ -9,7 +9,6 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
-
 def home_list(request):
 	context = {}
 	data = Home.objects.all()
