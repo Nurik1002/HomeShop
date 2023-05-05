@@ -6,76 +6,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yangilash</title>
+    <title>Axborot tizimlari</title>
 
     <!-- link bootstrap style -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.2/dist/css/bootstrap.min.css' % }">
+
     <!-- link fontawesome style -->
     <link rel="stylesheet" href="{% static 'fontawesome-free-6.3.0-web/css/all.min.css' %}">
 
     <!-- link style css  -->
     <link rel="stylesheet" href="{% static 'Sass/style.css' %}">
 </head>
-
 <body>
 
-  <div class="container-fluid Elon__backCon">
-    <div class="row position-relative d-flex flex-column justify-content-between height__res">
-        <!-- start header  -->
-        <header class="col-12 p-0 about__header">
+    <div class="container-fluid Elon__backCon">
+        <div class="row position-relative d-flex flex-column justify-content-between height__res">
+            <!-- start header  -->
+            <header class="col-12 p-0 about__header">
 
-            <!-- start navbar  -->
-            <nav class="nav navbar-expand-lg d-flex align-items-center about__head">
-                <div class="container">
-                    <div class="row d-flex flex-row justify-content-between align-items-center">
+                <!-- start navbar  -->
+                <nav class="nav navbar-expand-lg d-flex align-items-center about__head">
+                    <div class="container">
+                        <div class="row d-flex flex-row justify-content-between align-items-center">
 
-                        <!-- navbar logo  -->
-                        <div class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
-                            <img src="{% static 'Images/fotor_2023-3-18_9_41_34-removebg-preview.png' %}" alt="logo" class="nav__img"></img>
-                            <span class="nav__title">Homes.com</span>
-                        </div>
+                            <!-- navbar logo  -->
+                            <div class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
+                                <img src="{% static 'Images/fotor_2023-3-18_9_41_34-removebg-preview.png' %}" alt="logo" class="nav__img"></img>
+                                <span class="nav__title">Homes.com</span>
+                            </div>
 
-                        <!-- menyu  -->
-                        <div class="col-sm-8 menyu d-flex justify-content-sm-end align-items-md-center">
-                            <ul class="list-group d-flex flex-column flex-sm-row list__group">
-                              <li class="list-group-item active"><a href="{% url 'home' %}">Home</a></li>
+                            <!-- menyu  -->
+                            <div class="col-sm-8 menyu d-flex justify-content-sm-end align-items-md-center">
+                                <ul class="list-group d-flex flex-column flex-sm-row list__group">
+                                    <li class="list-group-item active"><a href="{% url 'home' %}">Home</a></li>
                                     <li class="list-group-item"><a href="{% url 'region'  'Samarqand' %}">City</a></li>
                                     {% if user.is_authenticated %}
   
                                     <li class="list-group-item"><a  href="{% url 'my_homes' user.pk %}">E'lonlarim</a></li>
                                     <li class="list-group-item"><a  href="{% url 'create' %}">Sotish</a></li>
                                     {% endif %}
-                            </ul>
+                                </ul>
+                            </div>
+                            <div class="col-2 col-mg-0 menyu__res__bars d-flex d-md-none flex-column justify-content-center align-items-end">
+                                <div class="M__bars__con"></div>
+                                <div class="M__bars__con"></div>
+                                <div class="M__bars__con"></div>
+                            </div>
+                            <div class="menyu__modal"></div>
                         </div>
-                        <div class="col-2 col-mg-0 menyu__res__bars d-flex d-md-none flex-column justify-content-center align-items-end">
-                            <div class="M__bars__con"></div>
-                            <div class="M__bars__con"></div>
-                            <div class="M__bars__con"></div>
-                        </div>
-                        <div class="menyu__modal"></div>
                     </div>
-                </div>
-            </nav>
-            <!-- end navbar  -->
+                </nav>
+                <!-- end navbar  -->
 
-        </header>
-        <!-- end header  -->
-
+            </header>
+            <!-- end header  -->
 
             <!-- start section  -->
             <section class="p-0 col-12">
                 <div class="container">
                     <div class="row">
                         <div class="E__FGroup p-0">
-                            <h2 class="FG__title">Sozlamalar</h2>
+                            <h2 class="FG__title">E'lon berish</h2>
                             <form action="Elon" class="d-flex flex-column">
+                                {% csrf_token %} 
                                 <div class="formChildGR">
-                                  
-                                  {% csrf_token %} 
-                                  
                                     <div>
                                         <label for="Name__in" class="form-label">Nomi</label>
-                                        <input type="text" for="Name__in" id="Name__in" class="form-control" required placeholder="Bog'">
+                                        <input type="text" for="Name__in" id="Name__in" class="form-control" maxlength="12" required placeholder="Bog'">
                                     </div>
                                     <div>
                                         <label for="inputTel" class="form-label">Telefon</label>
@@ -83,7 +80,7 @@
                                     </div>
                                     <div>
                                         <label for="Narx__in" class="form-label">Narxi</label>
-                                        <input type="text" for="Narx__in" id="Narx__in" class="form-control" required placeholder="$12 mln">
+                                        <input type="text" for="Narx__in" id="Narx__in" class="form-control" maxlength="7" required placeholder="$12 mln">
                                     </div>
                                     <div>
                                         <label for="Photo__in" class="form-label">Rasm yuklash</label>
@@ -110,7 +107,7 @@
                                     </div>
                                     <div>
                                         <label for="Addres__in" class="form-label">Manzil</label>
-                                        <input type="text" id="Addres__in" class="form-control" placeholder="Ulug'bek ko'chasi 111..">
+                                        <input type="text" id="Addres__in" class="form-control" maxlength="80" placeholder="Ulug'bek ko'chasi 111..">
                                     </div>
                                     <div>
                                         <label for="RoomNumber__in" class="form-label">Xonalar soni</label>
@@ -118,16 +115,14 @@
                                     </div>
                                     <div>
                                         <label for="maydon__in" class="form-label">Yer maydoni</label>
-                                        <input type="text" id="maydon__in" class="form-control" placeholder="2430 kv.m">
+                                        <input type="text" id="maydon__in" class="form-control" maxlength="7" placeholder="2430 kv.m">
                                     </div>
                                     <div>
                                         <label for="Description__in" class="form-label">Malumot</label>
                                         <textarea name="text1" for="Description__in" id="Description__in" class="form-control" placeholder="Qayta tamirlangan..."></textarea>
                                     </div>
-                                   
                                 </div>
-                              
-                                <div class="s__i__submit d-flex justify-content-center"><button type="submit" class="s__i__buttun">E'lon berish</button></div>
+                                <div class="s__i__submit d-flex justify-content-center"><button type="submit" class="s__i__buttun">Saqlash</button></div>
                             </form>
                         </div>
                     </div>
@@ -154,7 +149,8 @@
     </div>
     
     <!-- link bootstrap js  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- link fontawesome js  -->
+    <script src="{% static 'bootstrap-5.0.2/dist/js/bootstrap.min.js' %}"></script>
+    <!-- link fontawesome js  -->
     <script src="{% static 'fontawesome-free-6.3.0-web/js/all.min.js' %}"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -169,7 +165,4 @@
     <script src="{% static 'Js/main.js' %}"></script>
 </body>
 </html>
-
-
-
 
