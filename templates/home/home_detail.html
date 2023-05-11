@@ -93,11 +93,20 @@
                                         <li class="list-group-item">
                                             <p class="p__list"><span class="p__list__title">Yer maydoni: </span><span class="p__list__subtitle">{{ data.area }} kv.m</span></p>
                                         </li>
+                                        {% if data.description != None %}
                                         <li class="list-group-item">
                                             <p class="p__list"><span class="p__list__title">Malumot: </span><span class="p__list__subtitle">{{ data.description }}</span></p>
                                         </li>
+                                        {% endif %}
+
+                                        <li class="list-group-item">
+                                            <p class="p__list"><span class="p__list__title">Bog'lanish: </span><span class="p__list__subtitle"> <br>Email : {{ data.user.email }} <br>Phone : {{ data.user.phone_number }}</span></p>
+                                        </li>
                                     </ul>
-                                    <div class=" d-flex justify-content-start align-items-center"><a href="./Settings.html" class="settings__link">O'zgartirish</a></div>
+                                    {% if user.id == data.user.id %}
+                                    <div class=" d-flex justify-content-start align-items-center"><a href="{% url 'update' data.pk %}" class="settings__link">O'zgartirish</a></div>
+                                    <div class=" d-flex justify-content-start align-items-center"><a href="{% url  'delete' data.pk %}" class="settings__link">O'chirish</a></div>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="p__bottom d-flex flex-column">

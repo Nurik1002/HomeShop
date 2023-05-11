@@ -70,6 +70,14 @@ img {
   padding: 10px 12px;
   border-radius: 10px;
 }
+.SignU__modal form .Input__group h1,
+.SingI__modal form .Input__group h1 {
+  color: #f3b947;
+}
+.SignU__modal form .Input__group p,
+.SingI__modal form .Input__group p {
+  color: #fff;
+}
 .SignU__modal form .button__group,
 .SingI__modal form .button__group {
   width: 100%;
@@ -297,6 +305,16 @@ img {
   min-height: 60px !important;
   position: relative !important;
 }
+.Elon__backCon .about__header .nav__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #1100ff;
+  margin-left: 2px;
+  text-decoration: none !important;
+}
 .Elon__backCon .E__FGroup {
   margin-top: 40px;
 }
@@ -382,6 +400,9 @@ img {
   font-size: 16px;
   line-height: 18px;
   color: rgba(0, 17, 255, 0.9921568627);
+}
+.Elon__backCon .E__FGroup form .s__i__buttun::nth-child(1) {
+  margin-right: 10px;
 }
 .Elon__backCon .about__footer .footer__subtitle {
   color: #fff !important;
@@ -676,6 +697,7 @@ img {
   line-height: 25px;
   color: #1100ff;
   margin-left: 2px;
+  text-decoration: none !important;
 }
 .header .nav .menyu,
 .about__header .nav .menyu {

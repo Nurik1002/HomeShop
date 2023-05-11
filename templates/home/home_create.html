@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axborot tizimlari</title>
-
     <!-- link bootstrap style -->
-    <link rel="stylesheet" href="{% static 'bootstrap-5.0.2/dist/css/bootstrap.min.css' % }">
-
-    <!-- link fontawesome style -->
-    <link rel="stylesheet" href="{% static 'fontawesome-free-6.3.0-web/css/all.min.css' %}">
-
-    <!-- link style css  -->
+   
+   
+   <link rel="stylesheet" href="{% static 'fontawesome-free-6.3.0-web/css/all.min.css' %}">
+    
     <link rel="stylesheet" href="{% static 'Sass/style.css' %}">
+    <link rel="stylesheet" href = "{% static 'bootstrap-5.0.2/dist/css/bootstrap.min.css' %}">
+    
+    
 </head>
 <body>
 
@@ -31,8 +31,10 @@
 
                             <!-- navbar logo  -->
                             <div class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
+                                <a href="{% url 'home' %}">
                                 <img src="{% static 'Images/fotor_2023-3-18_9_41_34-removebg-preview.png' %}" alt="logo" class="nav__img"></img>
-                                <span class="nav__title">Homes.com</span>
+                                <span class="nav__title" style="text-decoration:none;   ">Homes.com</span>
+                                </a>
                             </div>
 
                             <!-- menyu  -->
@@ -67,62 +69,17 @@
                     <div class="row">
                         <div class="E__FGroup p-0">
                             <h2 class="FG__title">E'lon berish</h2>
-                            <form action="Elon" class="d-flex flex-column">
+                            <form method = "POST" class="d-flex flex-column">
                                 {% csrf_token %} 
+                                
                                 <div class="formChildGR">
-                                    <div>
-                                        <label for="Name__in" class="form-label">Nomi</label>
-                                        <input type="text" for="Name__in" id="Name__in" class="form-control" maxlength="12" required placeholder="Bog'">
-                                    </div>
-                                    <div>
-                                        <label for="inputTel" class="form-label">Telefon</label>
-                                        <input type="tel" for="inputTel" id="inputTel" class="form-control" required maxlength="9" placeholder="+998 97 575 03 55"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                                    </div>
-                                    <div>
-                                        <label for="Narx__in" class="form-label">Narxi</label>
-                                        <input type="text" for="Narx__in" id="Narx__in" class="form-control" maxlength="7" required placeholder="$12 mln">
-                                    </div>
-                                    <div>
-                                        <label for="Photo__in" class="form-label">Rasm yuklash</label>
-                                        <input type="file" id="Photo__in" class="form-control" required>
-                                    </div>
-                                    <div>
-                                        <label for="City__in" class="form-label">Shahar</label>
-                                        <select  class="form-select" aria-label="Default select example" for="City__in" id="City__in">
-                                            <option selected>Toshkent</option>
-                                            <option value="1">Samarqand</option>
-                                            <option value="2">Buxoro</option>
-                                            <option value="3">Andijon</option>
-                                            <option value="4">Farg'ona</option>
-                                            <option value="5">Namangan</option>
-                                            <option value="6">Xorazm</option>
-                                            <option value="7">Qashqadaryo</option>
-                                            <option value="8">Jizzax</option>
-                                            <option value="9">Navoi</option>
-                                            <option value="10">Sirdaryo</option>
-                                            <option value="11">Qoraqalpog'iston</option>
-                                            <option value="12">Surxondaryo</option>
-                                            <option value="13">Boshqa...</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="Addres__in" class="form-label">Manzil</label>
-                                        <input type="text" id="Addres__in" class="form-control" maxlength="80" placeholder="Ulug'bek ko'chasi 111..">
-                                    </div>
-                                    <div>
-                                        <label for="RoomNumber__in" class="form-label">Xonalar soni</label>
-                                        <input type="text" id="RoomNumber__in" class="form-control" placeholder="9 ta xona" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                                    </div>
-                                    <div>
-                                        <label for="maydon__in" class="form-label">Yer maydoni</label>
-                                        <input type="text" id="maydon__in" class="form-control" maxlength="7" placeholder="2430 kv.m">
-                                    </div>
-                                    <div>
-                                        <label for="Description__in" class="form-label">Malumot</label>
-                                        <textarea name="text1" for="Description__in" id="Description__in" class="form-control" placeholder="Qayta tamirlangan..."></textarea>
-                                    </div>
+                                    {{ form.as_p }}
+                                
                                 </div>
-                                <div class="s__i__submit d-flex justify-content-center"><button type="submit" class="s__i__buttun">Saqlash</button></div>
+                                <div class="s__i__submit d-flex justify-content-center">
+                                    <a href="{% url 'home' %}" class="s__i__buttun" style="margin-right: 15px; text-decoration:none">Home</a>
+                                    <button type="submit" class="s__i__buttun">Saqlash</button>
+                                </div>
                             </form>
                         </div>
                     </div>

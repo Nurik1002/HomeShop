@@ -78,18 +78,9 @@ class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class HomeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Home
     fields = ('title','price', 'photo', 'city', 'address', 'num_of_rooms', 'area', 'description')
-    template_name = 'home/home_update.html'
+    template_name = 'home/home_create.html'
     success_url = reverse_lazy('home')
 
     def test_func(self):
         obj = self.get_object()
         return obj.user == self.request.user
-
-
-
-
-
-
-
-
-

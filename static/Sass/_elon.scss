@@ -20,6 +20,11 @@
   .about__header {
     min-height: 60px !important;
     position: relative !important;
+    .nav__title {
+      @include font(Inter, 700, 20px, 25px, #1100ff);
+      margin-left: 2px;
+      text-decoration: none !important;
+    }
   }
   .E__FGroup {
     margin-top: 40px;
@@ -71,6 +76,9 @@
         background-color: #00ff00;
         border: none;
         @include font(Poppins, 500, 16px, 18px, #0011fffd);
+        &::nth-child(1) {
+          margin-right: 10px;
+        }
       }
     }
   }

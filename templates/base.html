@@ -47,10 +47,14 @@
                         <div class="row d-flex flex-row justify-content-between align-items-center">
 
                             <!-- navbar logo  -->
+                            
                             <div class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
+                                <a href="{% url 'home' %}">
                                 <img src="{% static 'Images/fotor_2023-3-18_9_41_34-removebg-preview.png' %}" alt="logo" class="nav__img"></img>
                                 <span class="nav__title">Homes.com</span>
+                            </a>
                             </div>
+                            
 
                             <!-- menyu  -->
                             <div class="col-sm-8 menyu d-flex justify-content-sm-end align-items-md-center">
@@ -131,130 +135,18 @@
                <div class="container-fluid">
                 <div class="row flex-column justify-content-between align-items-center saveral_gr">
                     <h3>Sotuvga qo'yilgan uylar</h3>
+                    
                     <ul class="col-11 col-sm-9 col-md-7 col-lg-6 d-flex justify-content-between">
-                        <li class="several__gLink"><a href="#/" class="active All__card">Hammasi</a></li>
-                        <li class="several__gLink"><a href="#/" class="Home__card">Uy</a></li>
-                        <li class="several__gLink"><a href="#/" class="Twoo__card">Bog'</a></li>
-                        <li class="several__gLink"><a href="#/" class="There__catd">Hovli</a></li>
+                        <li class="several__gLink"><a href="#/" class="active All__card"></a></li>
+                        <li class="several__gLink"><a href="#/" class="Home__card"></a></li>
+                        <li class="several__gLink"><a href="#/" class="Twoo__card"></a></li>
+                        <li class="several__gLink"><a href="#/" class="There__catd"></a></li>
                     </ul>
                     <div class="carousel__l p-0">
-                       
+                      <!-- -->
                         {% block content %}
                         {% endblock content %}
-                        <!--
-                        <div class="card Hovli">
-                            <div class="card__img"><img src="../Images/s1.jpg" class="card-img-top" alt="..."></div>
-                            <div class="card-body">
-                                <div class="card__group d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title">Hovli</h5>
-                                    <div class="card__shop d-flex align-items-center">
-                                        <div class="shooping__grop">
-                                            <img src="../Images/shopping.62d60ad.svg" class="shopping__img" alt="">
-                                        </div>
-                                        <img src="../Images/Vector.png" alt="">
-                                    </div>
-                                </div>
-                                <p class="card-text">
-                                    Samarqand sh., Ulug‘bek ko‘chasi, 111-uy
-                                </p>
-                                <div class="card__footer">
-                                    <a href="#/" class="cF__item__link">11 xona</a>
-                                    <a href="#/" class="cF__item__link">2500 kv</a>
-                                    <a href="#/" class="cF__item__link">$12 mln</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        
-                        
-                        
-
-                        <div class="card Bog">
-                            <div class="card__img">
-                                <img src="../Images/s7.jpg" class="card-img-top" alt="...">
-                                <div class="cI__about d-flex">
-                                    <div class="mess__ion solo"></div>
-                                    <span class="ion__subtitle solo">Solo</span>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card__group d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title">Bog</h5>
-                                    <div class="card__shop d-flex align-items-center">
-                                        <div class="shooping__grop">
-                                            <img src="../Images/shopping.62d60ad.svg" class="shopping__img" alt="">
-                                        </div>
-                                        <img src="../Images/Vector.png" alt="">
-                                    </div>
-                                </div>
-                                <p class="card-text">
-                                    Samarqand sh., Ulug‘bek ko‘chasi, 111-uy
-                                </p>
-                                <div class="card__footer">
-                                    <a href="#/" class="cF__item__link">9 xona</a>
-                                    <a href="#/" class="cF__item__link">2500 kv</a>
-                                    <a href="#/" class="cF__item__link">$12 mln</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card Bog">
-                            <div class="card__img"><img src="../Images/s8.jpg" class="card-img-top" alt="..."></div>
-                            <div class="card-body">
-                                <div class="card__group d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title">Bog'</h5>
-                                    <div class="card__shop d-flex align-items-center">
-                                        <div class="shooping__grop">
-                                            <img src="../Images/shopping.62d60ad.svg" class="shopping__img" alt="">
-                                        </div>
-                                        <img src="../Images/Vector.png" alt="">
-                                    </div>
-                                </div>
-                                <p class="card-text">
-                                    Samarqand sh., Ulug‘bek ko‘chasi, 111-uy
-                                </p>
-                                <div class="card__footer">
-                                    <a href="#/" class="cF__item__link">13 xona</a>
-                                    <a href="#/" class="cF__item__link">2500 kv</a>
-                                    <a href="#/" class="cF__item__link">$12 mln</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-
-                        
-
-                        <div class="card Uy">
-                            <div class="card__img">
-                                <img src="../Images/s11.jpg" class="card-img-top" alt="...">
-                                <div class="cI__about d-flex">
-                                    <div class="mess__ion new"></div>
-                                    <span class="ion__subtitle new">Yangi</span>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card__group d-flex justify-content-between align-items-center">
-                                    <h5 class="card-title">Uy</h5>
-                                    <div class="card__shop d-flex align-items-center">
-                                        <div class="shooping__grop">
-                                            <img src="../Images/shopping.62d60ad.svg" class="shopping__img" alt="">
-                                        </div>
-                                        <img src="../Images/Vector.png" alt="">
-                                    </div>
-                                </div>
-                                <p class="card-text">
-                                    Samarqand sh., Ulug‘bek ko‘chasi, 111-uy
-                                </p>
-                                <div class="card__footer">
-                                    <a href="#/" class="cF__item__link">8 xona</a>
-                                    <a href="#/" class="cF__item__link">2500 kv</a>
-                                    <a href="#/" class="cF__item__link">$12 mln</a>
-                                </div>
-                            </div>
-                        </div>
-                    -->
+                         
 
                     </div>
                 </div>
