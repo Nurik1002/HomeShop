@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
-from django import forms
+from .forms import HomeFilterForm, HomeForm
 
 
 def home_list(request):
@@ -29,13 +29,25 @@ def search(request):
     context['data'] = data
     return render(request, "home.html", context)
 
-@login_required(login_url='login')
-def get_region(request, region):	
-	context = {}
-	data = Home.objects.filter(city = region)
-	context['data'] = data
-	return render(request, "home/home_reg.html", context)
 
+# def get_region(request, region):	
+# 	context = {}
+# 	data = Home.objects.filter(city = region)
+# 	context['data'] = data
+# 	return render(request, "home/home_reg.html", context)
+
+
+
+def home_filter(request):
+    if request.method == 'GET':
+        form = HomeFilterForm(request.GET)
+        if form.is_valid():
+            city = form.cleaned_data['city']
+            homes = Home.objects.filter(city=city)
+            return render(request, 'home/home_reg.html', {'data': homes, 'forma': form})
+    else:
+        form = HomeFilterForm()
+    return render(request, 'base.html', {'forma': form})
 
 
 
@@ -79,12 +91,6 @@ class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 # forms.py
 
-
-class HomeForm(forms.ModelForm):
-    class Meta:
-        model = Home
-        fields = ['title', 'price',  'photo', 'address', 'city', 'num_of_rooms', 'area', 'description']
-        widgets = {'description': forms.Textarea(attrs={'cols': 80, 'rows': 5})}
 
 
 # views.py

@@ -784,8 +784,8 @@ img {
   width: 100% !important;
   border: 1px solid #f3b947;
 }
-.header .nav .menyu .list__group .list-group-item #City__in,
-.about__header .nav .menyu .list__group .list-group-item #City__in {
+.header .nav .menyu .list__group .list-group-item select,
+.about__header .nav .menyu .list__group .list-group-item select {
   height: 40px !important;
   transition: all 0.2s linear;
   font-family: Poppins;
@@ -800,10 +800,9 @@ img {
   position: relative;
   width: 100% !important;
   border: 1px solid #f3b947;
-  row-gap: 10px;
 }
-.header .nav .menyu .list__group .list-group-item #City__in a,
-.about__header .nav .menyu .list__group .list-group-item #City__in a {
+.header .nav .menyu .list__group .list-group-item select option,
+.about__header .nav .menyu .list__group .list-group-item select option {
   background-color: #fff;
   font-family: Poppins;
   font-style: normal;
@@ -811,10 +810,6 @@ img {
   font-size: 15px;
   line-height: 18px;
   color: #000;
-  border: none;
-  width: 100%;
-  border-radius: none;
-  position: relative;
 }
 .header .nav .menyu .list__group .list-group-item select svg,
 .about__header .nav .menyu .list__group .list-group-item select svg {

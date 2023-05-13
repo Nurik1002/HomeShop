@@ -61,22 +61,53 @@
                                 <ul class="list-group d-flex flex-column flex-sm-row list__group">
                                     <li class="list-group-item active"><a href="{% url 'home' %}">Home</a></li>
                                     <li class="list-group-item d-flex align-items-center justify-content-center">
-                                        <ul  class="form-select" aria-label="Default select example" for="City__in" id="City__in" class="d-flex flex-column justify-content-center align-items-end">
-                                            <li selected disabled>City</li>
-                                            <li value="Toshkent"><a href="{% url 'region' 'Tashkent'  %}">Tashkent</a></li>
-                                            <li value="Samarqand"><a href="{% url 'region' 'Samarqand'  %}">Samarqand</a></li>
-                                            <li value="Buxoro"><a href="{% url 'region' 'Bukhara'  %}">Bukhara</a></li>
-                                            <li value="Andijon"><a href="{% url 'region' 'Andijan'  %}">Andijan</a></li>
-                                            <li value="Farg'ona"><a href="{% url 'region' 'Fergana'  %}">Fergana</a></li>
-                                            <li value="Namangan"><a href="{% url 'region' 'Namangan'  %}">Namangan</a></li>
-                                            <li value="Xorazm"><a href="{% url 'region' 'Xorazm'  %}">Xorazm</a></li>
-                                            <li value="Qashqadaryo"><a href="{% url 'region' 'Qashqadaryo'  %}">Qashqadaryo</a></li>
-                                            <li value="Jizzax"><a href="{% url 'region' 'Jizzakh'  %}">Jizzakh</a></li>
-                                            <li value="Navoi"><a href="{% url 'region' 'Navoiy'  %}">Navoiy</a></li>
-                                            <li value="Sirdaryo"><a href="{% url 'region' 'Sirdaryo'  %}">Sirdaryo</a></li>
-                                            <li value="Qoraqalpog'iston"><a href="{% url 'region' 'Qoraqalpog\'iston'  %}">Qoraqalpog\'iston</a></li>
-                                            <li value="Surxondaryo"><a href="{% url 'region' 'Surxondaryo'  %}">Surxondaryo</a></li>
-                                        </ul>
+                                        <!--<form action="" method="GET">
+                                        <select  class="form-select" aria-label="Default select example" for="City__in" id="City__in">
+                                            <option selected disabled>City</option>
+                                            <option value="{% url 'region' 'Tashkent'  %}"><a href="{% url 'region' 'Tashkent'  %}">Tashkent</a> </option>
+                                            <option value="{% url 'region' 'Samarqand'  %}">Samarqand</option>
+                                            <option value="{% url 'region' 'Bukhara'  %}">Bukhara</option>
+                                            <option value="{% url 'region' 'Andijan'  %}">Andijan</option>
+                                            <option value="{% url 'region' 'Fergana'  %}">Fergana</option>
+                                            <option value="{% url 'region' 'Namangan'  %}">Namangan</option>
+                                            <option value="{% url 'region' 'Xorazm'  %}">Xorazm</option>
+                                            <option value="{% url 'region' 'Qashqadaryo'  %}">Qashqadaryo</option>
+                                            <option value="{% url 'region' 'Jizzakh'  %}">Jizzakh</option>
+                                            <option value="{% url 'region' 'Navoiy'  %}">Navoiy</option>
+                                            <option value="{% url 'region' 'Sirdaryo'  %}">Sirdaryo</option>
+                                            <option value="{% url 'region' 'Qoraqalpog\'iston'  %}">Qoraqalpog'iston</option>
+                                            <option value="{% url 'region' 'Surxondaryo'  %}">Surxondaryo</option>
+                                        </select>
+                                    </form>
+                                
+                               
+                                    <select class="form-select" aria-label="Default select example" for="City__in" id="City__in">
+                                      <option value="" selected disabled>City</option>
+                                      <option value="Tashkent">Tashkent</option>
+                                      <option value="Samarqand">Samarqand</option>
+                                      <option value="Bukhara">Bukhara</option>
+                                      <option value="Andijan">Andijan</option>
+                                      <option value="Fergana">Fergana</option>
+                                      <option value="Namangan">Namangan</option>
+                                      <option value="Xorazm">Xorazm</option>
+                                      <option value="Qashqadaryo">Qashqadaryo</option>
+                                      <option value="Jizzakh">Jizzakh</option>
+                                      <option value="Navoiy">Navoiy</option>
+                                      <option value="Sirdaryo">Sirdaryo</option>
+                                      <option value="Qoraqalpog\'iston">Qoraqalpog'iston</option>
+                                      <option value="Surxondaryo">Surxondaryo</option>
+                                    </select>
+                                    <button type="submit">Go</button>
+                                  </form>
+                                -->
+
+                                <form method="get" class="form-select" aria-label="Default select example" for="City__in" id="City__in">
+                                    {{ forma.as_p }}
+                                    
+                                    <button type="submit">Region</button>
+                                    
+                                </form>
+                                
                                     </li>
                                     {% if user.is_authenticated %}
   

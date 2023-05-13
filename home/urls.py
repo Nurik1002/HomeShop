@@ -4,7 +4,7 @@ from home import views
 
 urlpatterns = [
     path("search/", views.search, name="search_results"),
-	path('region/<str:region>', views.get_region, name = 'region' ),
+	path('region/<str:region>', views.home_filter, name = 'region' ),
 	path('my/<int:id>/', views.my_homes, name = 'my_homes'),
 	path('<int:pk>/update', views.HomeUpdateView.as_view(), name = 'update'),
 	path('<int:pk>/delete', views.HomeDeleteView.as_view(), name = 'delete'),
