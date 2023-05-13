@@ -7,7 +7,7 @@ from home.models import Home
 from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.db.models import Q
 
 def home_list(request):
 	context = {}
@@ -16,6 +16,16 @@ def home_list(request):
 
 	return render(request, 'home.html', context)
     
+
+
+def search(request):  
+    context = {}
+    query = request.GET.get("q")
+    data = Home.objects.filter(
+        Q(title__icontains=query) | Q(city__icontains=query) | Q(address__icontains=query) | Q(price__icontains=query) | Q(description__icontains=query)
+    )
+    context['data'] = data
+    return render(request, "home.html", context)
 
 @login_required(login_url='login')
 def get_region(request, region):	

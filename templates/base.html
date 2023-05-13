@@ -87,7 +87,9 @@
                                 <h2 class="title">Ishonchli odamlar bilan uyingizni toping</h2>
                                 <div class="for__g d-flex flex-column justify-content-center align-items-center">
                                     <div class="top__for d-flex justify-content-between align-items-center">
-                                        <input type="search" class="input__search">
+                                        <form action="{% url 'search_results' %}" method="get">
+                                            <input type="search" name="q" class="input__search">
+                                        </form>
                                         <i class="fas fa-search search__icon"></i>
                                     </div>
                                     <div class="bottom__for d-flex justify-content-center align-items-center">
