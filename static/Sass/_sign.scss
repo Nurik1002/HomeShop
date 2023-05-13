@@ -40,7 +40,8 @@
         color: #f3b947;
       }
       p {
-        color: #fff;
+        @include font(Poppins, 500, 16px, 18px, #fffffffd);
+        text-align: center;
       }
     }
     .button__group {
@@ -48,15 +49,19 @@
       z-index: 3;
       column-gap: 1rem;
       input {
-        padding: 5px 10px;
+        padding: 6px 10px;
         border-radius: 10px;
         outline: none;
+        border: 2px solid #00ff00;
         background-color: #00ff00;
-        border: none;
-        color: #0011fffd;
+        @include font(Poppins, 500, 16px, 18px, #0011fffd);
+        &:hover {
+          background-color: transparent;
+          color: #00ff00
+        }
       }
       a {
-        color: #f3b947;
+        @include font(Poppins, 500, 16px, 18px, #f3b947);
       }
     }
   }

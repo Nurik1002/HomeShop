@@ -8,6 +8,8 @@ from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
+from django import forms
+
 
 def home_list(request):
 	context = {}
@@ -66,14 +68,61 @@ class HomeCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 	def test_func(self):
 		return self.request.user.is_active
+	
 
 	def form_valid(self, form):
 		form.instance.user = self.request.user 
 		form.save()
 		messages.success(self.request, "The task was created successfully.")
 		return super().form_valid(form)
+	
+
+# forms.py
 
 
+class HomeForm(forms.ModelForm):
+    class Meta:
+        model = Home
+        fields = ['title', 'price',  'photo', 'address', 'city', 'num_of_rooms', 'area', 'description']
+        widgets = {'description': forms.Textarea(attrs={'cols': 80, 'rows': 5})}
+
+
+# views.py
+
+
+
+def create_home(request):
+    if request.method == 'POST':
+        form = HomeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.user = request.user
+            form.save()
+            return redirect('home')
+    else:
+        form = HomeForm()
+    return render(request, 'home/home_create.html', {'form': form})
+
+	
+# class HomeForm(forms.ModelForm):
+#     class Meta:
+#         model = Home 
+#         fields = [
+#             'title', 'price', 'photo',
+#             'address', 'city', 'num_of_rooms', 'area', 'description'
+#         ]
+# def home_create(request):
+#     form = HomeForm()
+#     if request.method == 'POST':
+#         form = HomeForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             object = form.save(commit=False)
+#             object.user = request.user
+#             object.save()
+#             return redirect('home')
+
+#     return render(request, "home/home_create.html", {
+#         'form': form,
+#     })
 	
 
 class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

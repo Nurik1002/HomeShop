@@ -76,7 +76,13 @@ img {
 }
 .SignU__modal form .Input__group p,
 .SingI__modal form .Input__group p {
-  color: #fff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.9921568627);
+  text-align: center;
 }
 .SignU__modal form .button__group,
 .SingI__modal form .button__group {
@@ -87,15 +93,30 @@ img {
 }
 .SignU__modal form .button__group input,
 .SingI__modal form .button__group input {
-  padding: 5px 10px;
+  padding: 6px 10px;
   border-radius: 10px;
   outline: none;
+  border: 2px solid #00ff00;
   background-color: #00ff00;
-  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
   color: rgba(0, 17, 255, 0.9921568627);
+}
+.SignU__modal form .button__group input:hover,
+.SingI__modal form .button__group input:hover {
+  background-color: transparent;
+  color: #00ff00;
 }
 .SignU__modal form .button__group a,
 .SingI__modal form .button__group a {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
   color: #f3b947;
 }
 
@@ -241,13 +262,17 @@ img {
   border-radius: 10px;
   outline: none;
   background-color: #00ff00;
-  border: none;
+  border: 2px solid #00ff00;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   color: rgba(0, 17, 255, 0.9921568627);
+}
+.about__backCon .about__section .about__sGroup .sGroup__info:hover {
+  color: #00ff00;
+  background-color: transparent;
 }
 .about__backCon .about__footer .footer__subtitle {
   color: #fff !important;
@@ -304,16 +329,6 @@ img {
 .Elon__backCon .about__header {
   min-height: 60px !important;
   position: relative !important;
-}
-.Elon__backCon .about__header .nav__title {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 25px;
-  color: #1100ff;
-  margin-left: 2px;
-  text-decoration: none !important;
 }
 .Elon__backCon .E__FGroup {
   margin-top: 40px;
@@ -389,11 +404,12 @@ img {
   outline: none;
 }
 .Elon__backCon .E__FGroup form .s__i__buttun {
+  margin-left: 10px;
   padding: 8px 12px;
   border-radius: 10px;
   outline: none;
   background-color: #00ff00;
-  border: none;
+  border: 2px solid #00ff00;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -401,8 +417,27 @@ img {
   line-height: 18px;
   color: rgba(0, 17, 255, 0.9921568627);
 }
-.Elon__backCon .E__FGroup form .s__i__buttun::nth-child(1) {
-  margin-right: 10px;
+.Elon__backCon .E__FGroup form .s__i__buttun:hover {
+  color: #00ff00;
+  background-color: transparent;
+}
+.Elon__backCon .E__FGroup form .s__i__link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #cf1f00;
+  border: 2px solid #cf1f00;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.9921568627);
+}
+.Elon__backCon .E__FGroup form .s__i__link:hover {
+  border: 2px solid #cf1f00;
+  background-color: transparent;
+  color: #cf1f00;
 }
 .Elon__backCon .about__footer .footer__subtitle {
   color: #fff !important;
@@ -516,6 +551,7 @@ img {
   color: rgb(255, 255, 255);
 }
 .Product .P__top .Product__info .settings__link {
+  margin-right: 10px;
   padding: 8px 12px;
   border-radius: 10px;
   outline: none;
@@ -529,8 +565,26 @@ img {
   color: rgba(0, 17, 255, 0.9921568627);
 }
 .Product .P__top .Product__info .settings__link:hover {
-  border: 2px solid rgba(0, 17, 255, 0.9921568627);
   background-color: transparent;
+  color: #00ff00;
+}
+.Product .P__top .Product__info .delete__link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  outline: none;
+  background-color: #cf1f00;
+  border: 2px solid #cf1f00;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.9921568627);
+}
+.Product .P__top .Product__info .delete__link:hover {
+  border: 2px solid #cf1f00;
+  background-color: transparent;
+  color: #cf1f00;
 }
 .Product .p__bottom {
   margin-top: 30px;
@@ -697,7 +751,6 @@ img {
   line-height: 25px;
   color: #1100ff;
   margin-left: 2px;
-  text-decoration: none !important;
 }
 .header .nav .menyu,
 .about__header .nav .menyu {
@@ -731,12 +784,57 @@ img {
   width: 100% !important;
   border: 1px solid #f3b947;
 }
+.header .nav .menyu .list__group .list-group-item #City__in,
+.about__header .nav .menyu .list__group .list-group-item #City__in {
+  height: 40px !important;
+  transition: all 0.2s linear;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  color: #f3b947;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+  padding: 7px 16px;
+  position: relative;
+  width: 100% !important;
+  border: 1px solid #f3b947;
+  row-gap: 10px;
+}
+.header .nav .menyu .list__group .list-group-item #City__in a,
+.about__header .nav .menyu .list__group .list-group-item #City__in a {
+  background-color: #fff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+  border: none;
+  width: 100%;
+  border-radius: none;
+  position: relative;
+}
+.header .nav .menyu .list__group .list-group-item select svg,
+.about__header .nav .menyu .list__group .list-group-item select svg {
+  display: none;
+}
 .header .nav .menyu .list__group .list-group-item.active a, .header .nav .menyu .list__group .list-group-item:hover a,
 .about__header .nav .menyu .list__group .list-group-item.active a,
 .about__header .nav .menyu .list__group .list-group-item:hover a {
   border: 1px solid #0d6efd;
   color: #0d6efd;
   background-color: transparent !important;
+}
+.header .nav .menyu .list__group .list-group-item.active select, .header .nav .menyu .list__group .list-group-item:hover select,
+.about__header .nav .menyu .list__group .list-group-item.active select,
+.about__header .nav .menyu .list__group .list-group-item:hover select {
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  background-color: transparent !important;
+  outline: none;
+  box-shadow: none;
 }
 .header .slider__after,
 .about__header .slider__after {
@@ -1133,6 +1231,16 @@ footer .col-md-4 .icon__img {
     color: #f3b947;
     padding: 7px 12px;
   }
+  .header .nav .menyu .list__group .list-group-item select,
+  .about__header .nav .menyu .list__group .list-group-item select {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #f3b947;
+    padding: 7px 12px;
+  }
   .header .slider__after .slider__group__item .title,
   .about__header .slider__after .slider__group__item .title {
     margin: 0;
@@ -1358,9 +1466,30 @@ footer .col-md-4 .icon__img {
     border-radius: 10px;
     border: none;
   }
+  .header .nav .menyu .list__group .list-group-item select,
+  .about__header .nav .menyu .list__group .list-group-item select {
+    background-color: transparent;
+    width: 300px !important;
+    height: auto;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 27px;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+  }
   .header .nav .menyu .list__group .list-group-item.active a, .header .nav .menyu .list__group .list-group-item:hover a,
   .about__header .nav .menyu .list__group .list-group-item.active a,
   .about__header .nav .menyu .list__group .list-group-item:hover a {
+    border: none;
+    color: #f3b947;
+    background-color: #0d6efd !important;
+  }
+  .header .nav .menyu .list__group .list-group-item.active select, .header .nav .menyu .list__group .list-group-item:hover select,
+  .about__header .nav .menyu .list__group .list-group-item.active select,
+  .about__header .nav .menyu .list__group .list-group-item:hover select {
     border: none;
     color: #f3b947;
     background-color: #0d6efd !important;
@@ -1499,6 +1628,10 @@ footer .col-md-4 .icon__img {
   .about__header .nav .menyu .list__group .list-group-item a {
     width: 100% !important;
   }
+  .header .nav .menyu .list__group .list-group-item select,
+  .about__header .nav .menyu .list__group .list-group-item select {
+    width: 100% !important;
+  }
   .header .nav .menyu__res__bars.active__bars__exit .M__bars__con,
   .about__header .nav .menyu__res__bars.active__bars__exit .M__bars__con {
     background-color: #fff;
@@ -1562,4 +1695,42 @@ footer .col-md-4 .icon__img {
   header {
     height: calc(100vh + 150px) !important;
   }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 81;
+}
+.modal svg {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #f00;
+  border-radius: 50%;
+  color: #f00;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.top1 {
+  position: fixed;
+  right: 0px;
+  bottom: 50px;
+  z-index: 77;
+}
+.top1 svg {
+  font-size: 50px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

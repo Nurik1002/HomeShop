@@ -32,6 +32,7 @@
         }
       }
       .settings__link {
+        margin-right: 10px;
         padding: 8px 12px;
         border-radius: 10px;
         outline: none;
@@ -39,8 +40,21 @@
         border: 2px solid #00ff00;
         @include font(Poppins, 500, 16px, 18px, #0011fffd);
         &:hover {
-          border: 2px solid #0011fffd;
           background-color: transparent;
+          color: #00ff00;
+        }
+      }
+      .delete__link {
+        padding: 8px 12px;
+        border-radius: 10px;
+        outline: none;
+        background-color: #cf1f00;
+        border: 2px solid #cf1f00;
+        @include font(Poppins, 500, 16px, 18px, #fffffffd);
+        &:hover {
+          border: 2px solid #cf1f00;
+          background-color: transparent;
+          color: #cf1f00;
         }
       }
     }

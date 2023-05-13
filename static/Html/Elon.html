@@ -28,18 +28,35 @@
                         <div class="row d-flex flex-row justify-content-between align-items-center">
 
                             <!-- navbar logo  -->
-                            <div class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
+                            <a href="./Index.html" class="col-10 col-sm-4 nav__logo__con d-flex justify-content-start align-items-center">
                                 <img src="../Images/fotor_2023-3-18_9_41_34-removebg-preview.png" alt="logo" class="nav__img"></img>
                                 <span class="nav__title">Homes.com</span>
-                            </div>
+                            </a>
 
                             <!-- menyu  -->
                             <div class="col-sm-8 menyu d-flex justify-content-sm-end align-items-md-center">
                                 <ul class="list-group d-flex flex-column flex-sm-row list__group">
-                                    <li class="list-group-item"><a href="./Index.html">Home</a></li>
-                                    <li class="list-group-item"><a href="./About.html">About</a></li>
-                                    <li class="list-group-item"><a href="#/">City</a></li>
-                                    <li class="list-group-item active"><a href="#/">E'lon</a></li>
+                                    <li class="list-group-item d-flex align-items-center justify-content-center"><a href="./Index.html">Home</a></li>
+                                    <li class="list-group-item d-flex align-items-center justify-content-center"><a href="./About.html">About</a></li>
+                                    <li class="list-group-item d-flex align-items-center justify-content-center active"><a href="#/">E'lon</a></li>
+                                    <li class="list-group-item d-flex align-items-center justify-content-center">
+                                        <select  class="form-select" aria-label="Default select example" for="City__in" id="City__in">
+                                            <option selected><a href="./About.html">Toshkent</a></option>
+                                            <option value="1">Samarqand</option>
+                                            <option value="2">Buxoro</option>
+                                            <option value="3">Andijon</option>
+                                            <option value="4">Farg'ona</option>
+                                            <option value="5">Namangan</option>
+                                            <option value="6">Xorazm</option>
+                                            <option value="7">Qashqadaryo</option>
+                                            <option value="8">Jizzax</option>
+                                            <option value="9">Navoi</option>
+                                            <option value="10">Sirdaryo</option>
+                                            <option value="11">Qoraqalpog'iston</option>
+                                            <option value="12">Surxondaryo</option>
+                                            <option value="13">Boshqa...</option>
+                                        </select>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-2 col-mg-0 menyu__res__bars d-flex d-md-none flex-column justify-content-center align-items-end">
@@ -116,7 +133,10 @@
                                         <textarea name="text1" for="Description__in" id="Description__in" class="form-control" placeholder="Qayta tamirlangan..."></textarea>
                                     </div>
                                 </div>
-                                <div class="s__i__submit d-flex justify-content-center"><button type="submit" class="s__i__buttun">Saqlash</button></div>
+                                <div class="s__i__submit d-flex justify-content-center align-items-center">
+                                    <a href="./Index.html" class="s__i__link">Orqaga</a>
+                                    <button type="submit" class="s__i__buttun">Saqlash</button>
+                                </div>
                             </form>
                         </div>
                     </div>

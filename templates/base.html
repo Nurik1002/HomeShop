@@ -60,7 +60,24 @@
                             <div class="col-sm-8 menyu d-flex justify-content-sm-end align-items-md-center">
                                 <ul class="list-group d-flex flex-column flex-sm-row list__group">
                                     <li class="list-group-item active"><a href="{% url 'home' %}">Home</a></li>
-                                    <li class="list-group-item"><a href="{% url 'region'  'Samarqand' %}">City</a></li>
+                                    <li class="list-group-item d-flex align-items-center justify-content-center">
+                                        <ul  class="form-select" aria-label="Default select example" for="City__in" id="City__in" class="d-flex flex-column justify-content-center align-items-end">
+                                            <li selected disabled>City</li>
+                                            <li value="Toshkent"><a href="{% url 'region' 'Tashkent'  %}">Tashkent</a></li>
+                                            <li value="Samarqand"><a href="{% url 'region' 'Samarqand'  %}">Samarqand</a></li>
+                                            <li value="Buxoro"><a href="{% url 'region' 'Bukhara'  %}">Bukhara</a></li>
+                                            <li value="Andijon"><a href="{% url 'region' 'Andijan'  %}">Andijan</a></li>
+                                            <li value="Farg'ona"><a href="{% url 'region' 'Fergana'  %}">Fergana</a></li>
+                                            <li value="Namangan"><a href="{% url 'region' 'Namangan'  %}">Namangan</a></li>
+                                            <li value="Xorazm"><a href="{% url 'region' 'Xorazm'  %}">Xorazm</a></li>
+                                            <li value="Qashqadaryo"><a href="{% url 'region' 'Qashqadaryo'  %}">Qashqadaryo</a></li>
+                                            <li value="Jizzax"><a href="{% url 'region' 'Jizzakh'  %}">Jizzakh</a></li>
+                                            <li value="Navoi"><a href="{% url 'region' 'Navoiy'  %}">Navoiy</a></li>
+                                            <li value="Sirdaryo"><a href="{% url 'region' 'Sirdaryo'  %}">Sirdaryo</a></li>
+                                            <li value="Qoraqalpog'iston"><a href="{% url 'region' 'Qoraqalpog\'iston'  %}">Qoraqalpog\'iston</a></li>
+                                            <li value="Surxondaryo"><a href="{% url 'region' 'Surxondaryo'  %}">Surxondaryo</a></li>
+                                        </ul>
+                                    </li>
                                     {% if user.is_authenticated %}
   
                                     <li class="list-group-item"><a  href="{% url 'my_homes' user.pk %}">E'lonlarim</a></li>
@@ -87,10 +104,12 @@
                                 <h2 class="title">Ishonchli odamlar bilan uyingizni toping</h2>
                                 <div class="for__g d-flex flex-column justify-content-center align-items-center">
                                     <div class="top__for d-flex justify-content-between align-items-center">
-                                        <form action="{% url 'search_results' %}" method="get">
+                                        <form action="{% url 'search_results' %}" method="get" class="d-flex justify-content-center align-items-center position-relative">
                                             <input type="search" name="q" class="input__search">
+                                            <button type="submit" class="search__icon" style="border:none; background-color: transparent; position: absolute; right: -780px;" ><i class="fas fa-search "></i></button>
+                                            
                                         </form>
-                                        <i class="fas fa-search search__icon"></i>
+                                        
                                     </div>
                                     <div class="bottom__for d-flex justify-content-center align-items-center">
                                         {% if user.is_authenticated %}

@@ -8,10 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     menyu.classList.toggle("active__menyuu");
     menyu__modal.classList.toggle("modal__active");
     menyu__res__bars.classList.toggle("active__bars__exit");
-    // if(menyu.classList.contains("active__menyuu")) {
-    //   // window.onscroll = () => window.scroll(0, 0);
-    // }
   });
+  function scrolltime(){
+    if(menyu.classList.contains(".active__menyuu")){
+        window.removeEventListener("scroll", scrolltime);
+    };
+  };
+  window.addEventListener("scroll", scrolltime);
   menyu__modal.addEventListener("click", function() {
     menyu.classList.toggle("active__menyuu");
     menyu__modal.classList.toggle("modal__active");
@@ -54,7 +57,52 @@ document.addEventListener("DOMContentLoaded", function () {
         Bog[r].style.display="none";
       }
   });
+
+
+  // modal
+  const modal=document.querySelector(".modal"),
+    yopil=document.querySelectorAll(".btn1"),
+    fas=document.querySelector(".befor");
+    function open() {
+        modal.classList.add("show");
+        modal.classList.remove("hide");
+        document.body.style.overflow="hidden";
+        clearTimeout(x);
+    }
+    function close() {
+        modal.classList.remove("show");
+        modal.classList.add("hide");
+        document.body.style.overflow="";
+    }
+    yopil.forEach(ochil => {
+        ochil.addEventListener("click", open);        
+    });
+    fas.addEventListener("click", function(){
+        close();
+    }); 
+     const x=setTimeout(open, 3000);
+     modal.addEventListener("click", (e)=>{
+        if(e.target==modal){
+            close();
+        }
+    });
+    function scrolltime(){
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight){
+            open();
+            window.removeEventListener("scroll", scrolltime);
+        };
+    };
+    window.addEventListener("scroll", scrolltime);
   
+
+
+
+
+
+
+
+
+
 
   // country__item 
   var states__group = document.querySelector(".states__group");

@@ -28,7 +28,6 @@ $inputBgColor: #08f94b;
 $background: #3cc7f3;
 $border: 1px solid rgba(128, 128, 128, 0.5);
 
-
 @mixin button($border, $bg, $b__r) {
   border: 1px solid $border;
   background-color: $bg;
@@ -96,7 +95,6 @@ $border: 1px solid rgba(128, 128, 128, 0.5);
       .nav__title {
         @include font(Inter, 700, 20px, 25px, #1100ff);
         margin-left: 2px;
-        text-decoration: none !important;
       }
     }
 
@@ -119,12 +117,37 @@ $border: 1px solid rgba(128, 128, 128, 0.5);
             width: 100% !important;
             border: 1px solid $menyuColor;
           }
+          select {
+            height: 40px !important;
+            transition: all 0.2s linear;
+            @include font(Poppins, 500, 17px, 22px, $menyuColor);
+            border-radius: 25px;
+            background-color: $menyuBgColor;
+            padding: 7px 16px;
+            position: relative;
+            width: 100% !important;
+            border: 1px solid $menyuColor;
+            option {
+              background-color: #fff;
+              @include font(Poppins, 500, 15px, 18px, #000);
+            }
+            svg {
+              display: none;
+            }
+          }
           &.active,
           &:hover {
             a {
               border: 1px solid #0d6efd;
               color: #0d6efd;
               background-color: transparent !important;
+            }
+            select {
+              border: 1px solid #0d6efd;
+              color: #0d6efd;
+              background-color: transparent !important;
+              outline: none;
+              box-shadow: none;
             }
           }
         }
@@ -479,6 +502,10 @@ footer {
               @include font(Poppins, 500, 15px, 24px, $menyuColor);
               padding: 7px 12px;
             }
+            select {
+              @include font(Poppins, 500, 15px, 24px, $menyuColor);
+              padding: 7px 12px;
+            }
           }
         }
       }
@@ -692,9 +719,22 @@ footer {
               border-radius: 10px;
               border: none;
             }
+            select {
+              background-color: transparent;
+              width: 300px !important;
+              height: auto;
+              @include font(Poppins, 500, 17px, 27px, #fff);
+              border-radius: 10px;
+              border: none;
+            }
             &.active,
             &:hover {
               a {
+                border: none;
+                color: $menyuColor;
+                background-color: #0d6efd !important;
+              }
+              select {
                 border: none;
                 color: $menyuColor;
                 background-color: #0d6efd !important;
@@ -834,6 +874,9 @@ footer {
             a {
               width: 100% !important;
             }
+            select {
+              width: 100% !important;
+            }
           }
         }
       }
@@ -902,5 +945,48 @@ footer {
   }
   header {
     height: calc(100vh + 150px) !important;
+  }
+}
+
+
+
+// -------------------------ro'yxatdan o'tish modal---------------------------------
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 81;
+  svg {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #f00;
+    border-radius: 50%;
+    color: #f00;
+  }
+}
+.show {
+  display:flex;
+}
+.hide {
+  display:none;
+}
+
+
+
+// -------------------------------------yuqoriga o'tuvchi tugma---------------------------------
+.top1 {
+   position: fixed;
+  right: 0px;
+  bottom: 50px;
+  z-index: 77;
+  svg {
+    font-size: 50px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    position: relative;
   }
 }
