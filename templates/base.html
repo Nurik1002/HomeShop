@@ -101,12 +101,15 @@
                                   </form>
                                 -->
 
-                                <form method="get" class="form-select" aria-label="Default select example" for="City__in" id="City__in">
-                                    {{ forma.as_p }}
-                                    
-                                    <button type="submit">Region</button>
-                                    
-                                </form>
+                               
+
+                                <form method="GET">
+                                    <div class="input-group mt-5">
+                                     <!--  <input type="text" class="form-control p-3" placeholder="" aria-label="" aria-describedby="button-addon2"> -->
+                                     {{ filter.form.city }}
+                                    <button class="btn btn-outline-secondary col-lg-2" type="submit" id="button-addon2">Найти</button>
+                                    </div>
+                                    </form>
                                 
                                     </li>
                                     {% if user.is_authenticated %}

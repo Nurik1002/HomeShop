@@ -23,7 +23,7 @@ UZBEKISTAN_REGION_CHOICES = [
     ('Qoraqalpog\'iston', 'Qoraqalpog\'iston'),
 ]
 class HomeFilterForm(forms.Form):
-    city = forms.ChoiceField(choices=Home.UZBEKISTAN_REGION_CHOICES)
+    city = forms.ChoiceField(choices=UZBEKISTAN_REGION_CHOICES)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

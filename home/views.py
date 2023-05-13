@@ -9,15 +9,29 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from .forms import HomeFilterForm, HomeForm
-
+from home.filters import HomeFilter
 
 def home_list(request):
-	context = {}
-	data = Home.objects.all()
-	context["data"] = data
+    filter = HomeFilter(request.GET, queryset=Home.objects.all())
+    data = filter.qs
+    context = {"data": data, "filter":filter}
 
-	return render(request, 'home.html', context)
-    
+    return render(request, 'home.html', context)
+
+
+def home_filter(request):
+    if request.method == 'GET':
+        form = HomeFilterForm(request.GET)
+        if form.is_valid():
+            city = form.cleaned_data['city']
+            homes = Home.objects.filter(city=city)
+            return render(request, 'home/home_reg.html', {'data': homes, 'form': form})
+    else:
+        form = HomeFilterForm()
+    return render(request, 'base.html', {'form': form})
+
+
+
 
 
 def search(request):  
@@ -38,16 +52,6 @@ def search(request):
 
 
 
-def home_filter(request):
-    if request.method == 'GET':
-        form = HomeFilterForm(request.GET)
-        if form.is_valid():
-            city = form.cleaned_data['city']
-            homes = Home.objects.filter(city=city)
-            return render(request, 'home/home_reg.html', {'data': homes, 'forma': form})
-    else:
-        form = HomeFilterForm()
-    return render(request, 'base.html', {'forma': form})
 
 
 
