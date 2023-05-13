@@ -23,8 +23,11 @@ UZBEKISTAN_REGION_CHOICES = [
     ('Qoraqalpog\'iston', 'Qoraqalpog\'iston'),
 ]
 class HomeFilterForm(forms.Form):
-    city = forms.ChoiceField(choices= UZBEKISTAN_REGION_CHOICES, label='City')
+    city = forms.ChoiceField(choices=Home.UZBEKISTAN_REGION_CHOICES)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['city'].widget.attrs.update({'class': 'form-control'})
 
 class HomeForm(forms.ModelForm):
     class Meta:
