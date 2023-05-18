@@ -106,7 +106,8 @@
                                 <form method="GET"  for="City__in" id="City__in">
                                     <div class="list-group-item">
                                         {{ filter.form.city }}
-                                        <button class="list-group-item" type="submit" id="button-addon2">Qidir</button>
+                                        <button class="list-group-item" type="submit">Qidir</button>
+
                                     </div>
                                 </form>
                                 
@@ -224,6 +225,53 @@
 
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the form and button elements
+            var form = document.getElementById("City__in");
+            var button = form.querySelector('button[type="submit"]');
+    
+            // Hide the button initially
+            button.style.display = "none";
+    
+            // Add an event listener to the city select element
+            var citySelect = form.querySelector('select[name="city"]');
+            citySelect.addEventListener("change", function() {
+                // Show or hide the button based on the selected city
+                if (citySelect.value) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+    
+            // Add an event listener to the form
+            form.addEventListener("submit", function(event) {
+                // Prevent the form from being submitted if no city is selected
+                if (!citySelect.value) {
+                    event.preventDefault();
+                } else {
+                    
+                    console.log("Selected city:", citySelect.value);
+                }
+            });
+            button.style.display = "none";
+             document.addEventListener("DOMContentLoaded", function() {
+        // Get the form and button elements
+        var form = document.getElementById("City__in");
+        var button = form.querySelector('button[type="submit"]');
+
+        // Add an event listener to the button
+        button.addEventListener("click", function(event) {
+            // Submit the form
+            form.submit();
+        });
+    });
+
+        });
+    </script>
+    
+    
     
     <!-- link bootstrap js  -->
     <script src="{% static 'bootstrap-5.0.2/dist/js/bootstrap.min.js' %}"></script>
