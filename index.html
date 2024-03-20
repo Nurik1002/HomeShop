@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript API Yndex.Map</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=785f31b5-291b-4f9f-89c4-0a94c8ede33a&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+      function clear_result() {
+        document.getElementById("target").value= "";
+      }
+      async function start_process() {
+        let data = document.getElementById("data").value.split("\n")
+        let target = document.getElementById("target")
+        for (row of data) {
+          await new Promise(r => setTimeout(r, 50));
+          let arr = row.split(";")
+          let result = (
+            arr.length > 1
+            ? await (()=>{
+              let from = iscoord(arr[0])? arr[0].split(",",2): arr[0] ;
+              let to = iscoord(arr[1])? arr[1].split(",",2): arr[1] ;
+              return router(from,to).then(r => {
+                return `${r.from};${r.to};${r.dist}`;
+              })})()
+            : await (()=>{
+              let place = iscoord(arr[0]) ? arr[0].split(",",2) : arr[0];
+              return geocoder(place).then(r => {
+                return `${r.place};${r.point};${r.text}`;
+            })})()
+          )
+          target.value += result + "\n"
+        }
+      }
+      function router(from, to){
+        return ymaps.route([from,to], {multiRoute: false, routingMode: "auto"})
+          .then(r => {return {from: from, to: to, dist: r.getLength()}} )
+          .catch(e => {console.log(e); return {from: from, to: to, dist: 'route error'}});
+      }
+      function geocoder(place){
+          return ymaps.geocode(place, {results: 1}).then(
+            r => {
+              let geo = r.geoObjects.toArray()[0];
+              let data = geo.properties.get('metaDataProperty').GeocoderMetaData;
+              let point = geo.geometry.getCoordinates()
+              let result = {point: point, place: place, kind: data.kind, precision: data.precision, text: data.text};  
+              return result;}
+          ).catch(e => {console.log(e); return {place: place, point: 'geocoding error', text: null, kind:null, precision: null}})
+      }
+      function iscoord(value) {
+        let regexp = /\d+(?:\.\d+)*,\d+(?:\.\d+)*/ ;
+        return regexp.test(value) 
+      }
+    </script>    
+  </head>
+  <body style="font-family: Arial, Helvetica, sans-serif;">
+    <textarea id="data" class="area" rows=5 ></textarea>
+    <div><button id="process_button" class="button process" onclick="start_process()">Start</button></div>
+    <textarea id="target" class="area" rows=5 ></textarea>
+    <div><button id="clear_button" class="button clear" onclick="clear_result()">Clear</button></div>
+  </body>
+</html>
