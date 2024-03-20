@@ -112,28 +112,6 @@ def create_home(request):
         form = HomeForm()
     return render(request, 'home/home_create.html', {'form': form})
 
-	
-# class HomeForm(forms.ModelForm):
-#     class Meta:
-#         model = Home 
-#         fields = [
-#             'title', 'price', 'photo',
-#             'address', 'city', 'num_of_rooms', 'area', 'description'
-#         ]
-# def home_create(request):
-#     form = HomeForm()
-#     if request.method == 'POST':
-#         form = HomeForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             object = form.save(commit=False)
-#             object.user = request.user
-#             object.save()
-#             return redirect('home')
-
-#     return render(request, "home/home_create.html", {
-#         'form': form,
-#     })
-	
 
 class HomeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Home
